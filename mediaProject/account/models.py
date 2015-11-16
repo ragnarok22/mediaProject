@@ -30,3 +30,15 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+
+
+class FriendShip(models.Model):
+    sender = models.ForeignKey(UserProfile, related_name='+')
+    recivied = models.ForeignKey(UserProfile)
+    STATUS_CHOICE = (
+        ('0', 'Accepted'),
+        ('1', 'Denied'),
+    )
+
+    def __str__(self):
+        return '%s is friend to %s' % (self.sender.user.first_name, self.recivied.user.first_name)
