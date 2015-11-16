@@ -1,78 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3ef0df52-1724-47b0-b817-ca7bfb2dbb58" name="Default" comment="creando los ficheros estaticos como js y css. creando los html">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/FontAwesome.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftBold.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftBold.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftItalic.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftItalic.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftMedium.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftMedium.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftRegular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftRegular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/own/MyriadPro-It.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/own/MyriadPro-It.otf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/own/MyriadPro-It.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/own/MyriadPro-It.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/the_wall.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/font-awesome.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/jquery.dropdown.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/material-fullpalette.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/material-fullpalette.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/material.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/material.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/materialdesignicons.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/materialdesignicons.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/ripples.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/ripples.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/roboto.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/roboto.min.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/snackbar.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/css/toastr.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/LICENSE.txt" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/Gruntfile.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/jquery-2.0.1.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/jquery.dropdown.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/jquery.nouislider.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/material.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/material.min.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/plugins.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/ripples.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/ripples.min.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/snackbar.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/snackbar.min.js.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/js/toastr.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/own/MyriadPro-It.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/own/app.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/own/login.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/own/my_styles.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/static/own/styles.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/templates/about.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/templates/base.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/templates/contact.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/templates/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/templates/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/templates/privacy.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/templates/terms.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/account/templates/user_login.html" />
+    <list default="true" id="3ef0df52-1724-47b0-b817-ca7bfb2dbb58" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/toastr.min.css" afterPath="$PROJECT_DIR$/account/static/css/toastr.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/jquery.nouislider.min.js" afterPath="$PROJECT_DIR$/account/static/js/jquery.nouislider.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/toastr.min.js" afterPath="$PROJECT_DIR$/account/static/js/toastr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/own/login.js" afterPath="$PROJECT_DIR$/account/static/own/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/own/my_styles.css" afterPath="$PROJECT_DIR$/account/static/own/my_styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/about.html" afterPath="$PROJECT_DIR$/account/templates/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/terms.html" afterPath="$PROJECT_DIR$/account/templates/terms.html" />
     </list>
     <ignored path="mediaProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -534,7 +471,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447705320740</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="creando los ficheros estaticos como js y css. creando los html">
+      <created>1447705451303</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1447705451303</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
