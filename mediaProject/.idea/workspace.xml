@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef0df52-1724-47b0-b817-ca7bfb2dbb58" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.sqlite3" afterPath="$PROJECT_DIR$/db.sqlite3" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/multimedia/users/admin/pycharm.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/multimedia/users/user/3D_029.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/multimedia/users/usuario/05_1024.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/index.html" afterPath="$PROJECT_DIR$/account/templates/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/views.py" afterPath="$PROJECT_DIR$/account/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mediaProject/urls.py" afterPath="$PROJECT_DIR$/mediaProject/urls.py" />
     </list>
     <ignored path="mediaProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -495,7 +494,13 @@
       <option name="project" value="LOCAL" />
       <updated>1447705451303</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="mejorando referencias urls">
+      <created>1447706767673</created>
+      <option name="number" value="00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1447706767673</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TodoView">
@@ -545,7 +550,8 @@
     <MESSAGE value="creando las urls y las vistas principales" />
     <MESSAGE value="creando los ficheros estaticos(javascript, css) y creando los html" />
     <MESSAGE value="creando los ficheros estaticos como js y css. creando los html" />
-    <option name="LAST_COMMIT_MESSAGE" value="creando los ficheros estaticos como js y css. creando los html" />
+    <MESSAGE value="mejorando referencias urls" />
+    <option name="LAST_COMMIT_MESSAGE" value="mejorando referencias urls" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
