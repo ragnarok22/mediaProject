@@ -1,0 +1,186 @@
+{% extends 'base.html'%}
+{% load staticfiles %}
+
+{% block title %}Inicio{% endblock %}
+
+{% block content %}
+    <div id="head"></div>
+    <!--empieza la barra de navegacion-->
+    <div class="navbar navbar-default">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="javascript:void(0)">The Wall</a>
+        </div>
+        <div class="navbar-collapse collapse navbar-responsive-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Inicio</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#contact-modal" id="contact">Contáctanos</a></li>
+                <li><a href="#">Grupos</a></li>
+                <li><a href="#">Imágenes</a></li>
+            </ul>
+            <form action="" class="navbar-form navbar-left">
+                <input type="search" class="form-control col-lg-8" placeholder="Buscar"/>
+            </form>
+
+            <!--opciones del usuario-->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Bienvenid@ {{ user.first_name }} <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="#"><i class="fa fa-user"></i> Mi perfil</a>
+                        </li>
+                        <li><a href="#"><i class="mdi-image-edit"></i> Editar Perfil</a></li>
+                        <li><a href="#"><i class="mdi-communication-email"></i> Mis Mensajes</a></li>
+                        <li><a href="#"><i class="mdi-social-notifications-none"></i> Mis Notificaciones</a></li>
+                        <li class="divider"></li>
+                        <li>
+                            <a href="{% url 'user_profile:logout' %}"> <i class="fa fa-sign-out"></i> Salir</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!--fin de las opciones del usuario-->
+        </div>
+    </div>
+    <!--fin de la barra de navegacion-->
+
+    <!--area de notificaciones-->
+    <div id="notifications">
+    </div>
+    <!--fin del area de notificaciones-->
+
+    <!--area de informacion-->
+    <div class="container-fluid">
+        <div class="col-lg-8" id="informations">
+            <p >Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt dolore doloribus earum expedita fugiat
+                perspiciatis praesentium ratione sequi ullam velit? Ad hic incidunt laudantium non odit possimus sapiente.
+                Cumque, doloremque.</p>
+            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="" data-original-title="Esto es una prueba">Test</button>
+        </div>
+        <div class="col-lg-4">
+            <!--informacion adicionada recientemente-->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <p>ultimas fotos subidas</p>
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            <div class="row-picture">
+                                <img class="circle" src="{% static 'the_wall.jpg' %}" alt="icon">
+                            </div>
+                            <div class="row-content">
+                                <h4 class="list-group-item-heading">Tile with avatar</h4>
+                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus</p>
+                            </div>
+                        </div>
+                        <div class="list-group-separator"></div>
+                        <div class="list-group-item">
+                            <div class="row-picture">
+                                <img class="circle" src="{% static 'the_wall.jpg' %}" alt="icon">
+                            </div>
+                            <div class="row-content">
+                                <h4 class="list-group-item-heading">Tile with another avatar</h4>
+                                <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                            </div>
+                        </div>
+                        <div class="list-group-separator"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--listado de los usuarios-->
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <!--usuarios que son staff-->
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Staff</h3>
+                        </div>
+                        <div class="panel-body">
+                            <ul>
+                                <li>{{ user.get_full_name }}</li>
+                                <li>Reinier</li>
+                                <li>Ragnarok</li>
+                                <li>Tu_mama</li>
+                                <li>Sasuke22</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!--simples usuarios-->
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Usuarios Conectados</h3>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-body">
+                                <div class="list-group">
+                                    {% for user in users %}
+                                        <div class="list-group-item">
+                                            <div class="row-picture">
+                                                <img class="circle" src="/{{ user.photo }}" alt="{{ user.user.username }}">
+                                            </div>
+                                            <div class="row-content">
+                                                <h4 class="list-group-item-heading">{{ user.user.get_full_name }}</h4>
+                                                <p class="list-group-item-text">{{ user.about_me }}</p>
+                                            </div>
+                                        </div>
+                                        <div class="list-group-separator"></div>
+			 	    {% empty %}
+					<p>No hay usuarios conectados</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--fin del area de informacion-->
+
+    <!--contactar con el administrador del sitio-->
+    <div class="modal fade" id="contact-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                    <h4 class="modal-title">Contáctanos</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center">
+                        <i class="fa fa-spinner fa-spin fa-5x" id="spinner-contact"></i>
+                    </div>
+                    <div id="contact-content">
+                        {#                        contenido de la privacidad#}
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="text-left">
+                        <footer><strong>Grupo de desarrollo The Wall</strong></footer>
+                    </div>
+                    <button type="button" class="btn btn-material-teal-500 btn-raised" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--fin de contactar con el administrador del sitio-->
+
+    <a href="#head" class="btn btn-default btn-fab btn-raised fa fa-angle-double-up"></a>
+    <div id="topcontrol hidden-phone" title="Ir arriba" style="position: fixed; bottom: 5px; right: 5px; opacity: 0; cursor: pointer;">
+	<img src="../Brisa SWL-X, un tema de iconos de y para nuestra comunidad_files/up.png" style="width:75px; height:80px" class="hidden-phone">
+    </div>
+    {% block script %}
+        {% if message_error %}
+            <script>
+                toastr.options.closeButton = true;
+                toastr.options.positionClass = 'toast-top-right';
+                toastr.error('{{ message_error }}');
+            </script>
+        {% endif %}
+    {% endblock %}
+{% endblock %}

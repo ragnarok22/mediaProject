@@ -1,0 +1,16 @@
+@font-face {
+    font-family: 'MyriadPro-It';
+    src: url('MyriadPro-It.eot?') format('eot'),
+    url('MyriadPro-It.otf')  format('opentype'),
+    url('MyriadPro-It.woff') format('woff'),
+    url('MyriadPro-It.ttf')  format('truetype'),
+    url('MyriadPro-It.svg#MyriadPro-It') format('svg');
+}
+
+body {
+    font-family: 'MyriadPro-It';
+}
+h1, h2, h3, h4 {
+    font-weight: normal;
+    font-family: 'MyriadPro-It';
+}
