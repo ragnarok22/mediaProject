@@ -30,6 +30,7 @@ def user_login(request):
 def dashboard(request):
     if request.method == 'GET':
         users = UserProfile.objects.filter(is_conected=True)
+        user = request.user
         return render(request, 'index.html', locals())
     else:
         email = request.POST.get('email', "")
@@ -58,7 +59,7 @@ def dashboard(request):
 
 def login_view(request):
     if request.user.is_authenticated():
-        return redirect(reverse('user_profile:dashboard'))
+        return redirect(reverse('account:dashboard'))
     else:
         if request.method == 'POST':
             username = request.POST['username']
@@ -73,7 +74,7 @@ def login_view(request):
                 profile = UserProfile.objects.get(user=user)
                 profile.is_conected = True
                 profile.save()
-                return redirect(reverse('user_profile:dashboard'))
+                return redirect(reverse('account:dashboard'))
             else:
                 error = True
                 message = 'Este usuario ha sido baneado, por favor contacte al administrador'
@@ -88,7 +89,7 @@ def logout_view(request):
     profile.is_conected = False
     profile.save()
     logout(request)
-    return redirect(reverse('user_profile:login'))
+    return redirect(reverse('account:login'))
 
 
 def contact_us(request):
