@@ -1,5 +1,5 @@
 from django.conf.urls import url
-from .views import login_view, terms, about, privacy, dashboard, logout_view, contact_us, user_login
+from .views import login_view, terms, about, privacy, dashboard, logout_view, contact_us, user_login, friendship
 from mediaProject.settings import MEDIA_ROOT
 
 
@@ -10,6 +10,7 @@ urlpatterns = [
     url(r'^dashboard/$', dashboard, name='dashboard'),
 
     url(r'^users/in/$', user_login, name='user_login'),
+    url(r'^friendship/$', friendship, name='friendship'),
 
     url(r'^contact/us/$', contact_us, name='contact'),
     url(r'^terms/$', terms, name='terms'),

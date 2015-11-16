@@ -20,6 +20,9 @@ def user_update(request):
     pass
 
 
+def friendship(request):
+    pass
+
 @login_required
 def user_login(request):
     users = UserProfile.objects.filter(is_conected=True)
