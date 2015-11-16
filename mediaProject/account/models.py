@@ -1,3 +1,32 @@
+from django.contrib.auth.models import User
 from django.db import models
 
-# Create your models here.
+
+class UserProfile(models.Model):
+
+    def url(self, filename):
+        route = 'users/%s/%s' % (self.user.username, filename)
+        return route
+
+    photo = models.ImageField(upload_to=url)
+    about_me = models.TextField()
+    sign = models.CharField(max_length=100)
+    user = models.OneToOneField(User)
+    born_date = models.DateField()
+    SEX_CHOICES = (
+        ('M', 'Masculino'),
+        ('W', 'Femenino'),
+        ('U', 'Sin definir'),
+    )
+    CIVIL_STATUS_CHOICES = (
+        ('M', 'casado'),
+        ('S', 'soltero'),
+        ('F', 'con novia'),
+        ('C', 'es complicado'),
+    )
+    sex = models.CharField(max_length=1, choices=SEX_CHOICES, default='U')
+    civil_status = models.CharField(max_length=1, choices=CIVIL_STATUS_CHOICES, default='S')
+    is_conected = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.user.username
