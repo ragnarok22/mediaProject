@@ -56,8 +56,7 @@ ROOT_URLCONF = 'mediaProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')]
-        ,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -102,3 +101,21 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = 'media/'
+MEDIA_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'multimedia'))
+
+TEMPLATE_DIRS = (
+    os.path.join(BASE_DIR, 'templates'),
+)
+
+LOGIN_URL = '/login'
+
+EMAIL_HOST = 'smtp.facinf.uho.edu.cu'
+# EMAIL_PORT = '25'
+EMAIL_HOST_USER = 'rhernandeza'
+EMAIL_PASSWORD_USER = 'seabiskuit32+'
+EMAIL_SUBJECT_PREFIX = '[The Wall] '
+ADMINS = (
+    ('Reinier Hernandez Avila', 'rhernandeza@facinf.uho.edu.cu'),
+)
+VERSION = '1.0'
