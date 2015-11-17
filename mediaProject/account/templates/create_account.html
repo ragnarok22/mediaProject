@@ -39,10 +39,34 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="sign" class="col-lg-3">Fecha de nacimiento</label>
+                <label for="date" class="col-lg-3">Fecha de nacimiento</label>
                 <div class="col-lg-9">
-                    <input type="text" class="form-control floating-label" placeholder="firma" id="sign" name="sign"/>
+                    <input type="text" class="form-control floating-label" placeholder="date" id="sign" name="date"/>
                 </div>
+            </div>
+            <div class="form-group">
+                <label for="sex" class="col-lg-3">Sexo</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control floating-label" placeholder="sex" id="sex" name="sex"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="civil_status" class="col-lg-3">estado civil</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control floating-label" placeholder="estado civil" id="civil_status" name="civil_status"/>
+                </div>
+            </div>
+            <div class="form-group col-lg-5 col-lg-push-2">
+                <a href="{% url 'account:login' %}" class="btn btn-primary btn-lg">
+                    <i class="fa fa-sign-in fa-fw"></i>
+                    Ya tengo una cuenta
+                </a>
+            </div>
+            <div class="form-group col-lg-5 col-lg-push-2">
+                <button class="btn btn-primary btn-lg" type="submit">
+                    <i class="fa fa-sign-in fa-fw"></i>
+                    Crear cuenta ahora
+                </button>
             </div>
         </fieldset>
     </form>
