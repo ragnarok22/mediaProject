@@ -1,12 +1,13 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+
 def url(self, filename):
     route = 'users/%s/%s' % (self.user.username, filename)
     return route
 
-class UserProfile(models.Model):
 
+class UserProfile(models.Model):
 
     photo = models.ImageField(upload_to=url)
     about_me = models.TextField()
