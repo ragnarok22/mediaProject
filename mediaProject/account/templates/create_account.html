@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block title %}Crear cuenta{% endblock %}
+
+{% block content %}
+    <form method="post" class="form-horizontal container">
+        {% csrf_token %}
+        <fieldset>
+            <legend>Crearse una cuenta</legend>
+            <div class="form-group">
+                <label for="name" class="col-lg-3">nombre</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control floating-label" placeholder="nombre" id="name" name="name"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="last_name" class="col-lg-3">apellidos</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control floating-label" placeholder="apellidos" id="last_name" name="last_name"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="col-lg-3">Correo</label>
+                <div class="col-lg-9">
+                    <input type="email" class="form-control floating-label" placeholder="Correo" id="email" name="email"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="about_me" class="col-lg-3">Acerca de ti</label>
+                <div class="col-lg-9">
+                    <textarea class="form-control floating-label" rows="3" placeholder="acerca de mi" id="about_me" name="about_me"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sign" class="col-lg-3">Firma</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control floating-label" placeholder="firma" id="sign" name="sign"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="sign" class="col-lg-3">Fecha de nacimiento</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control floating-label" placeholder="firma" id="sign" name="sign"/>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+
+{% endblock %}

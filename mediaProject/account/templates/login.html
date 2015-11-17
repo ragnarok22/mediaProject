@@ -21,7 +21,7 @@
             <form class="form-horizontal" method="post">
                 {% csrf_token %}
                 <fieldset>
-                    <legend>Login</legend>
+                    <legend>Entrar a The Wall</legend>
                     <div class="form-group">
                         <label for="username" class="control-label col-lg-3">Usuario</label>
                         <div class="col-lg-9">
@@ -59,7 +59,7 @@
                     <a href="#" class="btn btn-default">¿Has perdido tu contraseña?</a>
                 </div>
                 <div class="col-lg-6 col-lg-push-1">
-                    <a href="#" class="btn btn-default">Quiero una cuenta</a>
+                    <a href="{% url 'account:create_account' %}" class="btn btn-default">Quiero una cuenta</a>
                 </div>
             </div>
         </div>

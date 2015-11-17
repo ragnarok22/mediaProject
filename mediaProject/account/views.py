@@ -6,8 +6,11 @@ from django.core.mail import BadHeaderError, send_mail
 from .models import UserProfile
 
 
-def user_create(request):
-    pass
+def create_account(request):
+    if request.method == 'POST':
+        return render(request, 'create_account.html', locals())
+    else:
+        return render(request, 'create_account.html', locals())
 
 
 @login_required
@@ -22,6 +25,7 @@ def user_update(request):
 
 def friendship(request):
     pass
+
 
 @login_required
 def user_login(request):
