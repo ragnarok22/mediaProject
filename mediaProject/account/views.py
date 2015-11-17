@@ -1,11 +1,16 @@
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.mail import BadHeaderError, send_mail
 from .models import UserProfile
 
 
+def user_login_check(user):
+    return user.is_anonymous()
+
+
+@user_passes_test(user_login_check)
 def create_account(request):
     if request.method == 'POST':
         return render(request, 'create_account.html', locals())
