@@ -56,78 +56,81 @@
 
     <!--area de informacion-->
     <div class="container-fluid">
-        <div class="col-lg-8" id="informations">
-            <p >{% lorem 2 p random %}</p>
-            <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="" data-original-title="Esto es una prueba">Test</button>
-        </div>
-        <div class="col-lg-4">
-            <!--informacion adicionada recientemente-->
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <p>ultimas fotos subidas</p>
-                    <div class="list-group">
-                        <div class="list-group-item">
-                            <div class="row-picture">
-                                <img class="circle" src="{% static 'the_wall.jpg' %}" alt="icon">
-                            </div>
-                            <div class="row-content">
-                                <h4 class="list-group-item-heading">Tile with avatar</h4>
-                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus</p>
-                            </div>
+    <div class="col-lg-8" id="informations">
+        <p >{% lorem 2 p random %}</p>
+        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="" data-original-title="Esto es una prueba">Test</button>
+    </div>
+    <div class="col-lg-4">
+        <!--informacion adicionada recientemente-->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <p>ultimas fotos subidas</p>
+                <div class="list-group">
+                    <div class="list-group-item">
+                        <div class="row-picture">
+                            <img class="circle" src="{% static 'the_wall.jpg' %}" alt="icon">
                         </div>
-                        <div class="list-group-separator"></div>
-                        <div class="list-group-item">
-                            <div class="row-picture">
-                                <img class="circle" src="{% static 'the_wall.jpg' %}" alt="icon">
-                            </div>
-                            <div class="row-content">
-                                <h4 class="list-group-item-heading">Tile with another avatar</h4>
-                                <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
-                            </div>
+                        <div class="row-content">
+                            <h4 class="list-group-item-heading">Tile with avatar</h4>
+                            <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus</p>
                         </div>
-                        <div class="list-group-separator"></div>
                     </div>
+                    <div class="list-group-separator"></div>
+                    <div class="list-group-item">
+                        <div class="row-picture">
+                            <img class="circle" src="{% static 'the_wall.jpg' %}" alt="icon">
+                        </div>
+                        <div class="row-content">
+                            <h4 class="list-group-item-heading">Tile with another avatar</h4>
+                            <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                        </div>
+                    </div>
+                    <div class="list-group-separator"></div>
                 </div>
             </div>
+        </div>
 
-            <!--listado de los usuarios-->
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <!--usuarios que son staff-->
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Staff</h3>
-                        </div>
-                        <div class="panel-body">
-                            <ul>
-                                <li>{{ user.get_full_name }}</li>
-                                <li>Reinier</li>
-                                <li>Ragnarok</li>
-                                <li>Tu_mama</li>
-                                <li>Sasuke22</li>
-                            </ul>
-                        </div>
+        <!--listado de los usuarios-->
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <!--usuarios que son staff-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Administadores</h3>
                     </div>
-
-                    <!--simples usuarios-->
-                    <div class="panel panel-info">
-                        <div class="panel-heading">
-                            <h3 class="panel-title">Usuarios Conectados</h3>
-                        </div>
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="list-group">
-                                    <div class="text-center">
-                                        <i class="fa fa-spinner fa-spin fa-5x" id="spinner-users-in" style="display: none;"></i>
-                                    </div>
-                                    <div id="users-in">
-{#                                    informacion de los usuarios conectados#}
-                                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <div class="text-center">
+                                    <i class="fa fa-spinner fa-spin fa-5x" id="spinner-users-staff-in" style="display: none;"></i>
+                                </div>
+                                <div id="users-staff-in">
+                                    {#                                    informacion de los usuarios que son staff y estan conectados#}
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!--simples usuarios-->
+                <div class="panel panel-info">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Usuarios Conectados</h3>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="list-group">
+                                <div class="text-center">
+                                    <i class="fa fa-spinner fa-spin fa-5x" id="spinner-users-in" style="display: none;"></i>
+                                </div>
+                                <div id="users-in">
+                                    {#                                    informacion de los usuarios conectados#}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

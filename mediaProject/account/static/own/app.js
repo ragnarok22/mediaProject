@@ -9,6 +9,12 @@ $(document).ready(function () {
     $('#users-in').load('/users/in', function () {
         loader.css('display', 'none');
     });
+
+    loaderStaff = $('#spinner-users-staff-in');
+    loaderStaff.css('display', 'inline');
+    $('#users-staff-in').load('/users/staff/in', function () {
+        loaderStaff.css('display', 'none');
+    });
 });
 
 function print(sms){

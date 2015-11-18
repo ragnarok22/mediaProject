@@ -40,7 +40,7 @@ def user_login(request):
 
 @login_required
 def user_staff_login(request):
-    users = UserProfile.objects.filter(is_conected=True, user__is_staff=True).exclude(pk=request.user.pk)
+    users_staff = UserProfile.objects.filter(is_conected=True, user__is_staff=True).exclude(pk=request.user.pk)
     return render(request, 'user_staff.html', locals())
 
 

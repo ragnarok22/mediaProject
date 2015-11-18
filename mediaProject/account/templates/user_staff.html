@@ -1,4 +1,4 @@
-{% for user in users %}
+{% for user in users_staff %}
     <div class="list-group-item">
         <div class="row-picture">
             <img class="circle" src="/{{ user.photo }}" alt="{{ user.user.username }}">
@@ -10,5 +10,5 @@
     </div>
     <div class="list-group-separator"></div>
 {% empty %}
-    <p>No hay usuarios conectados</p>
+    <h4>No hay ning&uacute;n administador conectado</h4>
 {% endfor %}
