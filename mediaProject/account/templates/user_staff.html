@@ -1,0 +1,14 @@
+{% for user in users %}
+    <div class="list-group-item">
+        <div class="row-picture">
+            <img class="circle" src="/{{ user.photo }}" alt="{{ user.user.username }}">
+        </div>
+        <div class="row-content">
+            <h4 class="list-group-item-heading">{{ user.user.get_full_name }}</h4>
+            <p class="list-group-item-text">{{ user.about_me }}</p>
+        </div>
+    </div>
+    <div class="list-group-separator"></div>
+{% empty %}
+    <p>No hay usuarios conectados</p>
+{% endfor %}

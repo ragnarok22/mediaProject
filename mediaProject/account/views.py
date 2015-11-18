@@ -34,8 +34,14 @@ def friendship(request):
 
 @login_required
 def user_login(request):
-    users = UserProfile.objects.filter(is_conected=True)
+    users = UserProfile.objects.filter(is_conected=True).exclude(pk=request.user.pk)
     return render(request, 'user_login.html', locals())
+
+
+@login_required
+def user_staff_login(request):
+    users = UserProfile.objects.filter(is_conected=True, user__is_staff=True).exclude(pk=request.user.pk)
+    return render(request, 'user_staff.html', locals())
 
 
 @login_required
