@@ -32,6 +32,11 @@ def friendship(request):
     pass
 
 
+def user_profile(request, pk):
+    profile = UserProfile.objects.get(pk=pk)
+    return render(request, 'user_profile.html', locals())
+
+
 @login_required
 def user_login(request):
     users = UserProfile.objects.filter(is_conected=True).exclude(pk=request.user.pk)
