@@ -32,7 +32,7 @@
                     <a href="#" data-target="#" class="dropdown-toggle" data-toggle="dropdown">Bienvenid@ {{ user.first_name }} <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{% url 'account:profile' user.pk %}"><i class="fa fa-user"></i> Mi perfil</a>
+                            <a href="{% url 'account:profile' user.pk %}" id="profile"><i class="fa fa-user"></i> Mi perfil</a>
                         </li>
                         <li><a href="#"><i class="mdi-image-edit"></i> Editar Perfil</a></li>
                         <li><a href="#"><i class="mdi-communication-email"></i> Mis Mensajes</a></li>
@@ -49,19 +49,24 @@
     </div>
     <!--fin de la barra de navegacion-->
 
-    <!--area de notificaciones-->
-    <div id="notifications">
-    </div>
-    <!--fin del area de notificaciones-->
-
     <!--area de informacion-->
     <div class="container-fluid">
     <div class="col-lg-8" id="informations">
-        <p >{% lorem 2 p random %}</p>
-        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="" data-original-title="Esto es una prueba">Test</button>
+        {#        <p >{% lorem 2 p random %}</p>#}
+        {#        <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="" data-original-title="Esto es una prueba">Test</button>#}
+        <div>
+            <div class="text-center">
+                <i class="fa fa-spinner fa-spin fa-5x" id="spinner-information" style="display: none;"></i>
+            </div>
+            <div id="information">
+
+            </div>
+        </div>
     </div>
+    <!--fin del area de informacion-->
+
+    <!--informacion adicionada recientemente-->
     <div class="col-lg-4">
-        <!--informacion adicionada recientemente-->
         <div class="panel panel-default">
             <div class="panel-body">
                 <p>ultimas fotos subidas</p>
@@ -89,10 +94,12 @@
                 </div>
             </div>
         </div>
+        <!--fin de la informacion adicionada recientemente-->
 
         <!--listado de los usuarios-->
         <div class="panel panel-default">
             <div class="panel-body">
+
                 <!--usuarios que son staff-->
                 <div class="panel panel-info">
                     <div class="panel-heading">

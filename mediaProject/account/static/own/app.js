@@ -4,6 +4,8 @@ $(document).ready(function () {
     join_click_by_ajax("#about", "#about-content", "/about");
     join_click_by_ajax("#contact", "#contact-content", "/contact/us");
 
+    join_click_by_ajax("#profile", "#information", "/profile/1", "#spinner-information");
+
     loader = $('#spinner-users-in');
     loader.css('display', 'inline');
     $('#users-in').load('/users/in', function () {
@@ -21,10 +23,14 @@ function print(sms){
     console.log(sms);
 }
 
-function join_click_by_ajax(to, from, context){
+function join_click_by_ajax(to, from, context, load){
     $(to).click(function (event) {
         event.preventDefault();
-        loader = $('#spinner-' + to.substr(1));
+        if (load == null){
+            loader = $('#spinner-' + to.substr(1));
+        }else{
+            loader = $(load);
+        }
         loader.css('display', 'inline');
         $(from).load(context, function () {
             loader.css('display', 'none');
