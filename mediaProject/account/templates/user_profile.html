@@ -1,8 +1,5 @@
 nombre de usuario: {{ profile.user.username }}<br>
 email: {{ profile.user.email }}<br>
-nombre: {{ profile.user.first_name}}<br>
-apellidos: {{ profile.user.last_name }}<br>
-<img src="/{{ profile.photo }}" alt="foto of user" width="150"><br>
 acerca de {{ profile.user.username }}: {{ profile.about_me }}<br>
 fecha de nacimiento: {{ profile.born_date }}<br>
 sexo: {{ profile.get_sex_display }}<br>
@@ -14,4 +11,8 @@ estado civil: {{ profile.get_civil_status_display }}<br>
 {% endif %}
 
 <div class="col-lg-4">
+    <img src="/{{ profile.photo }}" alt="foto of user" width="150" class="img-circle"><br>
+</div>
+<div class="col-lg-8">
+    <h2>{{ profile.user.get_full_name }}' Wall</h2>
 </div>
