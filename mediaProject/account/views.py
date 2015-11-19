@@ -80,6 +80,11 @@ def dashboard(request):
             return render(request, 'index.html', locals())
 
 
+def information(request):
+    mesagge = 'Informaciones recientes'
+    return render(request, 'informations.html', locals())
+
+
 def login_view(request):
     if request.user.is_authenticated():
         return redirect(reverse('account:dashboard'))
