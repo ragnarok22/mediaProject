@@ -1,0 +1,17 @@
+nombre de usuario: {{ profile.user.username }}<br>
+email: {{ profile.user.email }}<br>
+nombre: {{ profile.user.first_name}}<br>
+apellidos: {{ profile.user.last_name }}<br>
+<img src="/{{ profile.photo }}" alt="foto of user" width="150"><br>
+acerca de {{ profile.user.username }}: {{ profile.about_me }}<br>
+fecha de nacimiento: {{ profile.born_date }}<br>
+sexo: {{ profile.get_sex_display }}<br>
+estado civil: {{ profile.get_civil_status_display }}<br>
+{% if profile.is_conected %}
+    <p>el usuario esta conectado</p>
+{% else %}
+    <p>el usuario actualmente no se encuentra en linea</p>
+{% endif %}
+
+<div class="col-lg-4">
+</div>

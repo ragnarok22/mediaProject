@@ -32,10 +32,21 @@ def friendship(request):
     pass
 
 
+def user_profile(request, pk):
+    profile = UserProfile.objects.get(pk=pk)
+    return render(request, 'user_profile.html', locals())
+
+
 @login_required
 def user_login(request):
-    users = UserProfile.objects.filter(is_conected=True)
+    users = UserProfile.objects.filter(is_conected=True).exclude(pk=request.user.pk)
     return render(request, 'user_login.html', locals())
+
+
+@login_required
+def user_staff_login(request):
+    users_staff = UserProfile.objects.filter(is_conected=True, user__is_staff=True).exclude(pk=request.user.pk)
+    return render(request, 'user_staff.html', locals())
 
 
 @login_required
@@ -67,6 +78,11 @@ def dashboard(request):
             error = True
             message_error = 'Debe de llenar todos los campos'
             return render(request, 'index.html', locals())
+
+
+def information(request):
+    mesagge = 'Informaciones recientes'
+    return render(request, 'informations.html', locals())
 
 
 def login_view(request):

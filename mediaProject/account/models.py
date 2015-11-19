@@ -12,7 +12,7 @@ class UserProfile(models.Model):
     photo = models.ImageField(upload_to=url)
     about_me = models.TextField()
     sign = models.CharField(max_length=100)
-    user = models.OneToOneField(User)
+    user = models.OneToOneField(User, related_name='profile')
     born_date = models.DateField()
     SEX_CHOICES = (
         ('M', 'Masculino'),
