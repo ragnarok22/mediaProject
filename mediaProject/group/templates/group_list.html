@@ -5,5 +5,7 @@
         {% if member.group.id == group.id %}
             <p>{{ member.person }}</p>
         {% endif %}
+    {% empty %}
+        <p>No tiene miembros</p>
     {% endfor %}
 {% endfor %}
