@@ -10,15 +10,16 @@ class Migration(migrations.Migration):
         ('account', '0002_friendship'),
     ]
 
-    operations = [
-        migrations.AlterField(
-            model_name='userprofile',
-            name='civil_status',
-            field=models.CharField(max_length=1, choices=[('M', 'casado'), ('S', 'soltero'), ('F', 'con novia'), ('C', 'es complicado')], default='S'),
-        ),
-        migrations.AlterField(
-            model_name='userprofile',
-            name='sex',
-            field=models.CharField(max_length=1, choices=[('M', 'Masculino'), ('W', 'Femenino'), ('U', 'Sin definir')], default='U'),
-        ),
-    ]
+    u_ = [migrations.AlterField(model_name='userprofile', name='civil_status', field=models.CharField(max_length=1,
+                                                                                                      choices=[('M',
+                                                                                                                'casado'),
+                                                                                                               ('S',
+                                                                                                                'soltero'),
+                                                                                                               ('F',
+                                                                                                                'con novia'),
+                                                                                                               ('C',
+                                                                                                                'es complicado')],
+                                                                                                      default='S'), ),
+          migrations.AlterField(model_name='userprofile', name='sex', field=models.CharField(max_length=1, choices=[
+              ('M', 'Masculino'), ('W', 'Femenino'), ('U', 'Sin definir')], default='U'), ), ]
+    operations = u_

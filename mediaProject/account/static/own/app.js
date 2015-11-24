@@ -4,7 +4,7 @@ $(document).ready(function () {
     join_click_by_ajax("#about", "#about-content", "/about");
     join_click_by_ajax("#contact", "#contact-content", "/contact/us");
 
-    join_click_by_ajax("#profile", "#information", "/profile/1", "#spinner-information");
+    join_click_by_ajax("#init", "#information", "/informations", "#spinner-information");
 
     //mostrar los usuarios que se encuentran en linea
     loader = $('#spinner-users-in');
@@ -28,7 +28,7 @@ $(document).ready(function () {
     });
 });
 
-function print(sms){
+function printsms(sms){
     console.log(sms);
 }
 

@@ -1,17 +1,32 @@
-nombre de usuario: {{ profile.user.username }}<br>
-email: {{ profile.user.email }}<br>
-nombre: {{ profile.user.first_name}}<br>
-apellidos: {{ profile.user.last_name }}<br>
-<img src="/{{ profile.photo }}" alt="foto of user" width="150"><br>
-acerca de {{ profile.user.username }}: {{ profile.about_me }}<br>
-fecha de nacimiento: {{ profile.born_date }}<br>
-sexo: {{ profile.get_sex_display }}<br>
-estado civil: {{ profile.get_civil_status_display }}<br>
-{% if profile.is_conected %}
-    <p>el usuario esta conectado</p>
-{% else %}
-    <p>el usuario actualmente no se encuentra en linea</p>
+{% if own.user.username != profile.user.username %}
+    {% if profile.is_conected %}
+        <p>el usuario esta conectado</p>
+    {% else %}
+        <p>el usuario actualmente no se encuentra en linea</p>
+    {% endif %}
 {% endif %}
 
 <div class="col-lg-4">
+    <img src="/{{ profile.photo }}" alt="foto of user" width="150" class="img-circle"><br>
+</div>
+<div class="col-lg-8">
+    <h2>{{ profile.user.username }}' Wall</h2>
+    <ul class="nav nav-tabs" style="margin-bottom: 15px">
+        <li class=""><a href="#last-comment" data-toggle="tab">ultimos comentarios</a></li>
+        <li><a href="#info" data-toggle="tab">Informacion personal</a></li>
+    </ul>
+
+    <div id="tabs-contents" class="tab-content">
+        <div class="tab-pane fade active in" id="info">
+            <p>{{ profile.user.get_full_name }}</p>
+            <p>{{ profile.user.email }}</p>
+            <p>{{ profile.about_me }}</p>
+            <p>{{ profile.born_date }}</p>
+            <p>{{ profile.get_sex_display }}</p>
+            <p>{{ profile.get_civil_status_display }}</p>
+        </div>
+        <div class="tab-pane fade" id="last-comment">
+            <p>ultimos comentarios de {{ profile.user.first_name }}</p>
+        </div>
+    </div>
 </div>
