@@ -1,3 +1,9 @@
 {% for group in groups %}
-    <p>{{ group.name }}</p>
+    <h1>{{ group.name }}</h1>
+    <h3>Miembros</h3>
+    {% for member in members %}
+        {% if member.group.id == group.id %}
+            <p>{{ member.person }}</p>
+        {% endif %}
+    {% endfor %}
 {% endfor %}
