@@ -1,7 +1,6 @@
 from django.conf.urls import url
 from .views import login_view, terms, about, privacy, dashboard, logout_view, contact_us, user_login, friendship,\
     create_account, user_staff_login, user_profile, information
-from mediaProject.settings import MEDIA_ROOT
 
 
 urlpatterns = [
@@ -22,7 +21,4 @@ urlpatterns = [
     url(r'^terms/$', terms, name='terms'),
     url(r'^about/$', about, name='about'),
     url(r'^privacy/$', privacy, name='privacy'),
-
-    url(r'^(?P<path>.*)/$', 'django.views.static.serve', {'document_root': MEDIA_ROOT}),
-
 ]

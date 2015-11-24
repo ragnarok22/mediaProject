@@ -1,0 +1,6 @@
+{% for picture in pictures %}
+    <h1>{{ picture.title }}</h1>
+    <p>about: {{ picture.about }}</p>
+    <p>creador: {{ picture.owner }}</p>
+    <img src="/{{ picture.picture }}" alt="{{ picture.title }}">
+{% endfor %}
