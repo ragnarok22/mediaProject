@@ -2,12 +2,107 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ef0df52-1724-47b0-b817-ca7bfb2dbb58" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/favicon.png" afterPath="$PROJECT_DIR$/account/static/favicon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/account/static/fonts/FontAwesome.otf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.eot" afterPath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.ttf" afterPath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.woff" afterPath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/RobotoDraftBold.woff" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftBold.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/RobotoDraftBold.woff2" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftBold.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/RobotoDraftItalic.woff" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftItalic.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/RobotoDraftItalic.woff2" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftItalic.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/RobotoDraftMedium.woff" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftMedium.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/RobotoDraftMedium.woff2" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftMedium.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/RobotoDraftRegular.woff" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftRegular.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/RobotoDraftRegular.woff2" afterPath="$PROJECT_DIR$/account/static/fonts/RobotoDraftRegular.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.eot" afterPath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.ttf" afterPath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.woff" afterPath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.woff2" afterPath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/own/MyriadPro-It.eot" afterPath="$PROJECT_DIR$/account/static/own/MyriadPro-It.eot" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/own/MyriadPro-It.otf" afterPath="$PROJECT_DIR$/account/static/own/MyriadPro-It.otf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/own/MyriadPro-It.ttf" afterPath="$PROJECT_DIR$/account/static/own/MyriadPro-It.ttf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/own/MyriadPro-It.woff" afterPath="$PROJECT_DIR$/account/static/own/MyriadPro-It.woff" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/the_wall.jpg" afterPath="$PROJECT_DIR$/account/static/the_wall.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/multimedia/dashboard/img/up.png" afterPath="$PROJECT_DIR$/multimedia/dashboard/img/up.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/multimedia/users/admin/00766.jpg" afterPath="$PROJECT_DIR$/multimedia/users/admin/00766.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/multimedia/users/mike/twitter.jpg" afterPath="$PROJECT_DIR$/multimedia/users/mike/twitter.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/multimedia/users/user/3D_029.jpg" afterPath="$PROJECT_DIR$/multimedia/users/user/3D_029.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/multimedia/users/usuario/05_1024.jpg" afterPath="$PROJECT_DIR$/multimedia/users/usuario/05_1024.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.name" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/mediaProject.iml" afterPath="$PROJECT_DIR$/.idea/mediaProject.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/__init__.py" afterPath="$PROJECT_DIR$/account/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/admin.py" afterPath="$PROJECT_DIR$/account/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/migrations/0001_initial.py" afterPath="$PROJECT_DIR$/account/migrations/0001_initial.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/migrations/0002_friendship.py" afterPath="$PROJECT_DIR$/account/migrations/0002_friendship.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/migrations/0003_auto_20151117_0215.py" afterPath="$PROJECT_DIR$/account/migrations/0003_auto_20151117_0215.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/migrations/__init__.py" afterPath="$PROJECT_DIR$/account/migrations/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/models.py" afterPath="$PROJECT_DIR$/account/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/account/static/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/account/static/css/font-awesome.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/jquery.dropdown.css" afterPath="$PROJECT_DIR$/account/static/css/jquery.dropdown.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/material-fullpalette.min.css" afterPath="$PROJECT_DIR$/account/static/css/material-fullpalette.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/material-fullpalette.min.css.map" afterPath="$PROJECT_DIR$/account/static/css/material-fullpalette.min.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/material.min.css" afterPath="$PROJECT_DIR$/account/static/css/material.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/material.min.css.map" afterPath="$PROJECT_DIR$/account/static/css/material.min.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/materialdesignicons.min.css" afterPath="$PROJECT_DIR$/account/static/css/materialdesignicons.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/materialdesignicons.min.css.map" afterPath="$PROJECT_DIR$/account/static/css/materialdesignicons.min.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/ripples.min.css" afterPath="$PROJECT_DIR$/account/static/css/ripples.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/ripples.min.css.map" afterPath="$PROJECT_DIR$/account/static/css/ripples.min.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/roboto.min.css" afterPath="$PROJECT_DIR$/account/static/css/roboto.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/roboto.min.css.map" afterPath="$PROJECT_DIR$/account/static/css/roboto.min.css.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/snackbar.min.css" afterPath="$PROJECT_DIR$/account/static/css/snackbar.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/css/toastr.min.css" afterPath="$PROJECT_DIR$/account/static/css/toastr.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/LICENSE.txt" afterPath="$PROJECT_DIR$/account/static/fonts/LICENSE.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.svg" afterPath="$PROJECT_DIR$/account/static/fonts/Material-Design-Icons.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/account/static/fonts/fontawesome-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.svg" afterPath="$PROJECT_DIR$/account/static/fonts/materialdesignicons-webfont.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/Gruntfile.js" afterPath="$PROJECT_DIR$/account/static/js/Gruntfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/account/static/js/bootstrap.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/jquery-2.0.1.min.js" afterPath="$PROJECT_DIR$/account/static/js/jquery-2.0.1.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/jquery.dropdown.js" afterPath="$PROJECT_DIR$/account/static/js/jquery.dropdown.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/jquery.nouislider.min.js" afterPath="$PROJECT_DIR$/account/static/js/jquery.nouislider.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/material.min.js" afterPath="$PROJECT_DIR$/account/static/js/material.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/material.min.js.map" afterPath="$PROJECT_DIR$/account/static/js/material.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/plugins.min.js" afterPath="$PROJECT_DIR$/account/static/js/plugins.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/ripples.min.js" afterPath="$PROJECT_DIR$/account/static/js/ripples.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/ripples.min.js.map" afterPath="$PROJECT_DIR$/account/static/js/ripples.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/snackbar.min.js" afterPath="$PROJECT_DIR$/account/static/js/snackbar.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/snackbar.min.js.map" afterPath="$PROJECT_DIR$/account/static/js/snackbar.min.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/js/toastr.min.js" afterPath="$PROJECT_DIR$/account/static/js/toastr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/own/MyriadPro-It.svg" afterPath="$PROJECT_DIR$/account/static/own/MyriadPro-It.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/own/app.js" afterPath="$PROJECT_DIR$/account/static/own/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/own/login.js" afterPath="$PROJECT_DIR$/account/static/own/login.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/own/my_styles.css" afterPath="$PROJECT_DIR$/account/static/own/my_styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/static/own/styles.css" afterPath="$PROJECT_DIR$/account/static/own/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/about.html" afterPath="$PROJECT_DIR$/account/templates/about.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/base.html" afterPath="$PROJECT_DIR$/account/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/contact.html" afterPath="$PROJECT_DIR$/account/templates/contact.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/create_account.html" afterPath="$PROJECT_DIR$/account/templates/create_account.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/index.html" afterPath="$PROJECT_DIR$/account/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/informations.html" afterPath="$PROJECT_DIR$/account/templates/informations.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/login.html" afterPath="$PROJECT_DIR$/account/templates/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/privacy.html" afterPath="$PROJECT_DIR$/account/templates/privacy.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/terms.html" afterPath="$PROJECT_DIR$/account/templates/terms.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/user_login.html" afterPath="$PROJECT_DIR$/account/templates/user_login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/user_profile.html" afterPath="$PROJECT_DIR$/account/templates/user_profile.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/templates/user_staff.html" afterPath="$PROJECT_DIR$/account/templates/user_staff.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/tests.py" afterPath="$PROJECT_DIR$/account/tests.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/urls.py" afterPath="$PROJECT_DIR$/account/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/account/views.py" afterPath="$PROJECT_DIR$/account/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mediaProject/__init__.py" afterPath="$PROJECT_DIR$/mediaProject/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mediaProject/settings.py" afterPath="$PROJECT_DIR$/mediaProject/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mediaProject/urls.py" afterPath="$PROJECT_DIR$/mediaProject/urls.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/mediaProject/wsgi.py" afterPath="$PROJECT_DIR$/mediaProject/wsgi.py" />
     </list>
     <list id="78489c77-8267-4fe9-ab18-2debdc374f31" name="sin versionar" comment="esto no se sube al repo" />
     <ignored path="mediaProject.iws" />
