@@ -1,4 +1,8 @@
 <h1>T&iacute;tulo: {{ picture.title }}</h1>
 <h3>acerca: {{ picture.about }}</h3>
 <h5>Subido por: {{ picture.owner }}</h5>
+<h2>Comentarios</h2>
+{% for comment in comments %}
+    <p>{{ comment.comments }}</p>
+{% endfor %}
 <img src="/{{ picture.picture }}" alt="{{ picture.title }}">
