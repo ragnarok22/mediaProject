@@ -3,4 +3,10 @@
     <p>about: {{ picture.about }}</p>
     <p>creador: {{ picture.owner }}</p>
     <img src="/{{ picture.picture }}" alt="{{ picture.title }}">
+    <h3>Commentarios</h3>
+    {% for comment in comments %}
+        {% if comment.photos.id == picture.id %}
+            <p>{{ comment.comments }}</p>
+        {% endif %}
+    {% endfor %}
 {% endfor %}
