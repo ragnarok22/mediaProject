@@ -4,6 +4,8 @@ $(document).ready(function () {
     join_click_by_ajax("#about", "#about-content", "/about");
     join_click_by_ajax("#contact", "#contact-content", "/contact/us");
 
+    join_click_by_ajax("#images", "#information", "/pictures/list", "#spinner-information");
+
     join_click_by_ajax("#init", "#information", "/informations", "#spinner-information");
 
     //mostrar los usuarios que se encuentran en linea
