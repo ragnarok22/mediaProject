@@ -21,3 +21,6 @@ class Comment(models.Model):
     comments = models.TextField()
     photos = models.ForeignKey(Photo)
 
+    def __str__(self):
+        return "%s --> %s" % (self.comments, self.photos)
+
