@@ -15,3 +15,9 @@ class Photo(models.Model):
 
     def __str__(self):
         return "%s del usuario %s" % (self.title, self.owner)
+
+
+class Comment(models.Model):
+    comments = models.TextField()
+    photos = models.ForeignKey(Photo)
+
