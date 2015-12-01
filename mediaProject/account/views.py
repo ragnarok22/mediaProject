@@ -34,7 +34,7 @@ def friendship(request):
 
 
 def user_profile(request, pk):
-    profile = UserProfile.objects.get(pk=pk)
+    profile = UserProfile.objects.get(user_id=pk)
     own = UserProfile.objects.get(pk=request.user.pk)
     is_my_profile = own == profile
     return render(request, 'user_profile.html', locals())
@@ -42,13 +42,13 @@ def user_profile(request, pk):
 
 @login_required
 def user_login(request):
-    users = UserProfile.objects.filter(is_conected=True).exclude(pk=request.user.pk)
+    users = UserProfile.objects.filter(is_conected=True).exclude(user_id=request.user.pk)
     return render(request, 'user_login.html', locals())
 
 
 @login_required
 def user_staff_login(request):
-    users_staff = UserProfile.objects.filter(is_conected=True, user__is_staff=True).exclude(pk=request.user.pk)
+    users_staff = UserProfile.objects.filter(is_conected=True, user__is_staff=True).exclude(user_id=request.user.pk)
     return render(request, 'user_staff.html', locals())
 
 
@@ -124,7 +124,7 @@ def logout_view(request):
 
 
 def contact_us(request):
-    profile = UserProfile.objects.get(pk=request.user.pk)
+    profile = UserProfile.objects.get(user_id=request.user.pk)
     return render(request, 'contact.html', locals())
 
 
