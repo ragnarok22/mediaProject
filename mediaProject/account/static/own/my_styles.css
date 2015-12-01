@@ -9,3 +9,27 @@ div .ligth-dark{
 footer .footer{
     float: inherit;
 }
+
+.move {
+    transition: 800ms;
+}
+
+.move:hover{
+    -webkit-transform: rotate(9deg);
+    -moz-transform: rotate(9deg);
+    -ms-transform: rotate(9deg);
+    -o-transform: rotate(9deg);
+    transform: rotate(9deg);
+}
+
+.zoom{
+    transition: 800ms;
+}
+
+.zoom:hover{
+    -webkit-transform: scale(1.2, 1.2);
+    -moz-transform: scale(1.2, 1.2);
+    -ms-transform: scale(1.2, 1.2);
+    -o-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
+}
