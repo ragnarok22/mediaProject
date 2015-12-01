@@ -35,6 +35,7 @@ def friendship(request):
 def user_profile(request, pk):
     profile = UserProfile.objects.get(pk=pk)
     own = UserProfile.objects.get(pk=request.user.pk)
+    is_my_profile = own == profile
     return render(request, 'user_profile.html', locals())
 
 

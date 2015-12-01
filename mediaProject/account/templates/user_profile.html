@@ -10,10 +10,14 @@
     <img src="/{{ profile.photo }}" alt="foto of user" width="150" class="img-circle"><br>
 </div>
 <div class="col-lg-8">
-    <h2>{{ profile.user.username }}' Wall</h2>
+    <h2>{{ profile.user.username }}' Wall
+        {% if is_my_profile %}
+            <a href="#" class="btn btn-flat btn-primary col-lg-push-5">editar perfil</a>
+        {% endif %}
+    </h2>
     <ul class="nav nav-tabs" style="margin-bottom: 15px">
-        <li class=""><a href="#last-comment" data-toggle="tab">ultimos comentarios</a></li>
-        <li><a href="#info" data-toggle="tab">Informacion personal</a></li>
+        <li class=""><a href="#last-comment" data-toggle="tab">&uacute;ltimos comentarios</a></li>
+        <li><a href="#info" data-toggle="tab">Informaci&oacute;n personal</a></li>
     </ul>
 
     <div id="tabs-contents" class="tab-content">
