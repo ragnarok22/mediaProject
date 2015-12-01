@@ -24,8 +24,9 @@ def user_search(request):
 
 
 @login_required
-def user_update(request):
-    pass
+def user_update(request, pk):
+    profile = UserProfile.objects.get(user_id=pk)
+    return render(request, 'edit_profile.html', locals())
 
 
 def friendship(request):
