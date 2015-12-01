@@ -20,3 +20,10 @@
     </div>
     <button type="submit" class="btn btn-primary">Enviar</button>
 </form>
+{% if profile.user.is_authenticated %}
+    <script>
+        email = $("#email");
+        email.val("{{ profile.user.email }}");
+        email.ad
+    </script>
+{% endif %}

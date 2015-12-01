@@ -122,7 +122,8 @@ def logout_view(request):
 
 
 def contact_us(request):
-    return render(request, 'contact.html')
+    profile = UserProfile.objects.get(pk=request.user.pk)
+    return render(request, 'contact.html', locals())
 
 
 def terms(request):
