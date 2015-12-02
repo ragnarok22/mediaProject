@@ -1,15 +1,15 @@
 <div class="col-lg-8">
-    <form role="form">
-        <label for="name">Nombre</label>
-        <input id="name" name="name" class="form-control">
-        <label for="email">Correo</label>
-        <input id="email" name="email" class="form-control">
+    <form role="form" method="post">
+        <label for="name-change">Nombre</label>
+        <input id="name-change" name="name" class="form-control" value="{{ profile.user.get_full_name }}">
+        <label for="email-change">Correo</label>
+        <input id="email-change" name="email" class="form-control" value="{{ profile.user.email }}">
         <input type="submit" value="Salvar cambios">
     </form>
 </div>
 <div class="col-lg-4">
     <div class="col-lg-4">
-        <img src="" alt="{{ profile.user.username }}" id="photo" class="img-circle" width="80" height="80">
+        <img src="/{{ profile.photo }}" alt="{{ profile.user.username }}" id="photo" class="img-circle" width="80" height="80">
     </div>
     <div class="col-lg-8">
         <p>aqui puedes editar tu foto de perfil</p>
@@ -17,8 +17,3 @@
     </div>
     <button class="btn btn-default pull-left">Remover foto</button>
 </div>
-<script>
-    $("#name").val("{{ profile.user.get_full_name }}");
-    $("#email").val("{{ profile.user.email }}");
-    $("#photo").attr("src", "/{{ profile.photo }}");
-</script>
