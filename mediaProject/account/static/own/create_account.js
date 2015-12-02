@@ -6,7 +6,15 @@ $(document).ready(function () {
 
     $("#create").click(function (event) {
         if(pass.val() != pass_check.val()){
-            alert("las contrasenas no coinciden");
+            toastr.options.closeButton = true;
+            toastr.options.positionClass = 'toast-top-right';
+            toastr.error("Las contraseñas no coinciden");
+            event.preventDefault();
+        }
+        if(sex.val() == "undefined"){
+            toastr.options.closeButton = true;
+            toastr.options.positionClass = 'toast-top-right';
+            toastr.error("Debe de seleccionar su sexo");
             event.preventDefault();
         }
     });
