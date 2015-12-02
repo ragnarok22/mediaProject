@@ -23,10 +23,9 @@ def create_account(request):
         sex = request.POST['sex']
         user_exist = User.objects.filter(username=username).first()
         email_exist = User.objects.filter(email=email).first()
-        if user_exist is None:
-            if email_exist is None:
+        if not user_exist:
+            if email_exist:
                 sms = "%s ya esta siendo usado por otro usuario" % email
-                error = True
                 return render(request, 'create_account.html', locals())
             profile = UserProfile()
             profile.born_date = date
@@ -39,7 +38,6 @@ def create_account(request):
             return redirect(reverse('account:dashboard'))
         else:
             sms = "%s ya esta siendo usado por otro, por favor seleccione otro" % username
-            error = True
             return render(request, 'create_account.html', locals())
     else:
         return render(request, 'create_account.html', locals())

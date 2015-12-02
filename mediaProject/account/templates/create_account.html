@@ -88,7 +88,7 @@
 {% endblock %}
 {% block script %}
     <script src="{% static 'own/create_account.js' %}"></script>
-    {% if error %}
+    {% if sms %}
         <script>
             toastr.options.closeButton = true;
             toastr.options.positionClass = 'toast-top-right';
