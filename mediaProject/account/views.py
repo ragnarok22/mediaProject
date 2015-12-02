@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
@@ -13,6 +14,25 @@ def user_login_check(user):
 @user_passes_test(user_login_check)
 def create_account(request):
     if request.method == 'POST':
+        username= request.POST['username']
+        password = request.POST['password']
+        name = request.POST['name']
+        last_name = request.POST['last_name']
+        email = request.POST['email']
+        date = request.POST['date']
+        sex = request.POST['sex']
+        user = User.objects.filter(username=username).first()
+        user1 = User.objects.filter(email=email).first()
+        if user is None and user1 is None:
+            profile = UserProfile()
+            profile.born_date = date
+            profile.sex = sex
+            profile.user = User(username=username, password=password, email=email, first_name=name, last_name=last_name)
+            profile.save()
+            return redirect(reverse('account:dashboard'))
+        else:
+            sms = "Ese nombre de usuario ya esta siendo usado por otro, por favor seleccione otro"
+            error = True
         return render(request, 'create_account.html', locals())
     else:
         return render(request, 'create_account.html', locals())
