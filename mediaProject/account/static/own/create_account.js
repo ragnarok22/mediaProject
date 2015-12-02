@@ -3,6 +3,8 @@ $(document).ready(function () {
     pass_check = $("#password-check");
     sex = $("#sex");
     date = $("#date");
+    var systemdate = new Date();
+    year = systemdate.getFullYear();
 
     $("#create").click(function (event) {
         //date.val() -----> year-moth-day
@@ -12,7 +14,7 @@ $(document).ready(function () {
         if(sex.val() == "undefined"){
             error_message("Debe de seleccionar su sexo");
         }
-        if(parseInt(date.val().substr(0, 4)) > 2015){
+        if(parseInt(date.val().substr(0, 4)) >= year){
             error_message("El año debe ser menor que la fecha actual");
         }
     });
