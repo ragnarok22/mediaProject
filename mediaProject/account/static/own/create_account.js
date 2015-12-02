@@ -2,20 +2,22 @@ $(document).ready(function () {
     pass = $("#password");
     pass_check = $("#password-check");
     sex = $("#sex");
-    console.log(sex.val());
+    date = $("#date");
 
     $("#create").click(function (event) {
+        //date.val() -----> year-moth-day
         if(pass.val() != pass_check.val()){
-            toastr.options.closeButton = true;
-            toastr.options.positionClass = 'toast-top-right';
-            toastr.error("Las contraseñas no coinciden");
-            event.preventDefault();
+            error_message("Las contraseñas no coinciden");
         }
         if(sex.val() == "undefined"){
-            toastr.options.closeButton = true;
-            toastr.options.positionClass = 'toast-top-right';
-            toastr.error("Debe de seleccionar su sexo");
-            event.preventDefault();
+            error_message("Debe de seleccionar su sexo");
         }
     });
+
+    function error_message(message){
+        toastr.options.closeButton = true;
+        toastr.options.positionClass = 'toast-top-right';
+        toastr.error(message);
+        event.preventDefault();
+    }
 });
