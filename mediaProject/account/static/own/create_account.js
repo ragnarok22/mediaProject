@@ -12,6 +12,9 @@ $(document).ready(function () {
         if(sex.val() == "undefined"){
             error_message("Debe de seleccionar su sexo");
         }
+        if(parseInt(date.val().substr(0, 4)) > 2015){
+            error_message("El año debe ser menor que la fecha actual");
+        }
     });
 
     function error_message(message){
