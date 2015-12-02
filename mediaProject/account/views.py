@@ -21,19 +21,26 @@ def create_account(request):
         email = request.POST['email']
         date = request.POST['date']
         sex = request.POST['sex']
-        user = User.objects.filter(username=username).first()
-        user1 = User.objects.filter(email=email).first()
-        if user is None and user1 is None:
+        user_exist = User.objects.filter(username=username).first()
+        email_exist = User.objects.filter(email=email).first()
+        if user_exist is None:
+            if email_exist is None:
+                sms = "%s ya esta siendo usado por otro usuario" % email
+                error = True
+                return render(request, 'create_account.html', locals())
             profile = UserProfile()
             profile.born_date = date
             profile.sex = sex
-            profile.user = User(username=username, password=password, email=email, first_name=name, last_name=last_name)
+            user = User(username=username, email=email, first_name=name, last_name=last_name)
+            user.set_password(password)
+            user.save()
+            profile.user = user
             profile.save()
             return redirect(reverse('account:dashboard'))
         else:
-            sms = "Ese nombre de usuario ya esta siendo usado por otro, por favor seleccione otro"
+            sms = "%s ya esta siendo usado por otro, por favor seleccione otro" % username
             error = True
-        return render(request, 'create_account.html', locals())
+            return render(request, 'create_account.html', locals())
     else:
         return render(request, 'create_account.html', locals())
 
@@ -55,7 +62,7 @@ def friendship(request):
 
 def user_profile(request, pk):
     profile = UserProfile.objects.get(user_id=pk)
-    own = UserProfile.objects.get(pk=request.user.pk)
+    own = UserProfile.objects.get(user_id=request.user.pk)
     is_my_profile = own == profile
     return render(request, 'user_profile.html', locals())
 

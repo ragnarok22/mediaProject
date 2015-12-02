@@ -11,7 +11,7 @@ $(document).ready(function () {
         if(pass.val() != pass_check.val()){
             error_message("Las contraseñas no coinciden");
         }
-        if(sex.val() == "undefined"){
+        if(sex.val() == "U"){
             error_message("Debe de seleccionar su sexo");
         }
         if(parseInt(date.val().substr(0, 4)) >= year){
