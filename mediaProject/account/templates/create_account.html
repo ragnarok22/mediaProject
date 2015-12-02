@@ -39,21 +39,9 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="about_me" class="col-lg-3">Acerca de ti</label>
-                <div class="col-lg-9">
-                    <textarea class="form-control floating-label" rows="3" placeholder="acerca de mi" id="about_me" name="about_me"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="sign" class="col-lg-3">Firma</label>
-                <div class="col-lg-9">
-                    <input type="text" class="form-control floating-label" placeholder="firma" id="sign" name="sign"/>
-                </div>
-            </div>
-            <div class="form-group">
                 <label for="date" class="col-lg-3">Fecha de nacimiento</label>
                 <div class="col-lg-9">
-                    <input type="text" class="form-control floating-label" placeholder="date" id="sign" name="date"/>
+                    <input type="date" class="form-control floating-label" placeholder="date" id="sign" name="date"/>
                 </div>
             </div>
             <div class="form-group">
@@ -91,5 +79,7 @@
             </div>
         </fieldset>
     </form>
-
+{% endblock %}
+{% block script %}
+    <script src="{% static 'own/create_account.js' %}"></script>
 {% endblock %}
