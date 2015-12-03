@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from .views import login_view, terms, about, privacy, dashboard, logout_view, contact_us, user_login, friendship,\
-    create_account, user_staff_login, user_profile, information, user_update
+    create_account, user_staff_login, user_profile, information, user_update, users
 
 
 urlpatterns = [
@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^informations/$', information, name='informations'),
 
     url(r'^users/in/$', user_login, name='user_login'),
+    url(r'^users/$', users, name='users'),
     url(r'^users/staff/in/$', user_staff_login, name='user_staff_login'),
 
     url(r'^profile/(?P<pk>[0-9]+)/$', user_profile, name='profile'),

@@ -58,6 +58,11 @@ def friendship(request):
     pass
 
 
+def users(request):
+    users_list = UserProfile.objects.all()
+    return render(request, 'users.html', locals())
+
+
 def user_profile(request, pk):
     profile = UserProfile.objects.get(user_id=pk)
     own = UserProfile.objects.get(user_id=request.user.pk)
@@ -104,7 +109,7 @@ def dashboard(request):
             return render(request, 'index.html', locals())
         else:
             error = True
-            message_error = 'Debe de llenar todos los campos. correo:%s asunto:%s mensaje:%s' % (email, subject, message)
+            message_error = 'Debe de llenar todos los campos'
             return render(request, 'index.html', locals())
 
 
