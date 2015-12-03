@@ -104,7 +104,7 @@ def dashboard(request):
             return render(request, 'index.html', locals())
         else:
             error = True
-            message_error = 'Debe de llenar todos los campos'
+            message_error = 'Debe de llenar todos los campos. correo:%s asunto:%s mensaje:%s' % (email, subject, message)
             return render(request, 'index.html', locals())
 
 
