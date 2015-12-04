@@ -1,3 +1,6 @@
 {% for user in users_list %}
-    <a href="{% url 'account:profile' user.user.pk %}">{{ user.user.get_full_name }}</a><br>
+    <a href="{% url 'account:profile' user.user.pk %}" id="user-profile{{ forloop.counter }}">{{ user.user.get_full_name }}</a><br>
+    <script>
+        join_click_by_ajax("#user-profile{{ forloop.counter }}", "#information", "{% url 'account:profile' user.user.pk %}", "#spinner-information");
+    </script>
 {% endfor %}
