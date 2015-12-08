@@ -1,5 +1,6 @@
 <div class="col-lg-8">
     <form role="form" method="post">
+        {% csrf_token %}
         <label for="name-change">Nombre</label>
         <input id="name-change" name="name" class="form-control" value="{{ profile.user.get_full_name }}">
         <label for="email-change">Correo</label>
@@ -21,3 +22,12 @@
     </div>
     <button class="btn btn-default pull-left">Remover foto</button>
 </div>
+{% block script %}
+    <script>
+        {% if sms %}
+            toastr.options.closeButton = true;
+            toastr.options.positionClass = 'toast-top-right';
+            toastr.error('{{ sms }}');
+        {% endif %}
+    </script>
+{% endblock %}
