@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
@@ -13,7 +14,31 @@ def user_login_check(user):
 @user_passes_test(user_login_check)
 def create_account(request):
     if request.method == 'POST':
-        return render(request, 'create_account.html', locals())
+        username= request.POST['username']
+        password = request.POST['password']
+        name = request.POST['name']
+        last_name = request.POST['last_name']
+        email = request.POST['email']
+        date = request.POST['date']
+        sex = request.POST['sex']
+        user_exist = User.objects.filter(username=username).first()
+        email_exist = User.objects.filter(email=email).first()
+        if not user_exist:
+            if email_exist:
+                sms = "%s ya esta siendo usado por otro usuario" % email
+                return render(request, 'create_account.html', locals())
+            profile = UserProfile()
+            profile.born_date = date
+            profile.sex = sex
+            user = User(username=username, email=email, first_name=name, last_name=last_name)
+            user.set_password(password)
+            user.save()
+            profile.user = user
+            profile.save()
+            return redirect(reverse('account:dashboard'))
+        else:
+            sms = "%s ya esta siendo usado por otro, por favor seleccione otro" % username
+            return render(request, 'create_account.html', locals())
     else:
         return render(request, 'create_account.html', locals())
 
@@ -33,9 +58,14 @@ def friendship(request):
     pass
 
 
+def users(request):
+    users_list = UserProfile.objects.all()
+    return render(request, 'users.html', locals())
+
+
 def user_profile(request, pk):
     profile = UserProfile.objects.get(user_id=pk)
-    own = UserProfile.objects.get(pk=request.user.pk)
+    own = UserProfile.objects.get(user_id=request.user.pk)
     is_my_profile = own == profile
     return render(request, 'user_profile.html', locals())
 

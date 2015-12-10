@@ -33,13 +33,14 @@ class UserProfile(models.Model):
         return self.user.username
 
 
-class FriendShip(models.Model):
+class Friendship(models.Model):
     sender = models.ForeignKey(UserProfile, related_name='+')
-    recivied = models.ForeignKey(UserProfile)
+    receiver = models.ForeignKey(UserProfile)
     STATUS_CHOICE = (
         ('0', 'Accepted'),
         ('1', 'Denied'),
     )
+    status = models.CharField(max_length=1, choices=STATUS_CHOICE)
 
     def __str__(self):
-        return '%s is friend to %s' % (self.sender.user.first_name, self.recivied.user.first_name)
+        return '%s want be a friend to %s' % (self.sender.user.first_name, self.recivied.user.first_name)

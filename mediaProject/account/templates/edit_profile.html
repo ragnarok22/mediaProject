@@ -1,5 +1,6 @@
 <div class="col-lg-8">
     <form role="form" method="post">
+        {% csrf_token %}
         <label for="name-change">Nombre</label>
         <input id="name-change" name="name" class="form-control" value="{{ profile.user.get_full_name }}">
         <label for="email-change">Correo</label>
@@ -9,11 +10,24 @@
 </div>
 <div class="col-lg-4">
     <div class="col-lg-4">
-        <img src="/{{ profile.photo }}" alt="{{ profile.user.username }}" id="photo" class="img-circle" width="80" height="80">
+        {% if profile.photo %}
+            <img src="/{{ profile.photo }}" alt="{{ profile.user.username }}" id="photo" class="img-circle" width="80" height="80">
+        {% else %}
+            <div><i class="fa fa-user"></i></div>
+        {% endif %}
     </div>
     <div class="col-lg-8">
-        <p>aqui puedes editar tu foto de perfil</p>
+        <p>Aqu&iacute; puedes editar tu foto de perfil</p>
         <input type="file" value="hola" class="form-control">
     </div>
     <button class="btn btn-default pull-left">Remover foto</button>
 </div>
+{% block script %}
+    <script>
+        {% if sms %}
+            toastr.options.closeButton = true;
+            toastr.options.positionClass = 'toast-top-right';
+            toastr.error('{{ sms }}');
+        {% endif %}
+    </script>
+{% endblock %}

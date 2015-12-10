@@ -9,57 +9,51 @@
         <fieldset>
             <legend>Crearse una cuenta</legend>
             <div class="form-group">
-                <label for="username" class="col-lg-3">nombre de usuario</label>
+                <label for="username" class="col-lg-3">Nombre de usuario</label>
                 <div class="col-lg-9">
-                    <input type="text" class="form-control floating-label" placeholder="nombre de usuario" id="username" name="username"/>
+                    <input type="text" class="form-control floating-label" placeholder="nombre de usuario" id="username" name="username" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="password" class="col-lg-3">contraseña</label>
+                <label for="password" class="col-lg-3">Contraseña</label>
                 <div class="col-lg-9">
-                    <input type="password" class="form-control floating-label" placeholder="contraseña" id="password" name="password"/>
+                    <input type="password" class="form-control floating-label" placeholder="contraseña" id="password" name="password" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="name" class="col-lg-3">nombre</label>
+                <label for="password-check" class="col-lg-3">Por favor, repita la contraseña</label>
                 <div class="col-lg-9">
-                    <input type="text" class="form-control floating-label" placeholder="nombre" id="name" name="name"/>
+                    <input type="password" class="form-control floating-label" placeholder="Repita la contraseña" id="password-check" name="password-check" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="last_name" class="col-lg-3">apellidos</label>
+                <label for="name" class="col-lg-3">Nombre</label>
                 <div class="col-lg-9">
-                    <input type="text" class="form-control floating-label" placeholder="apellidos" id="last_name" name="last_name"/>
+                    <input type="text" class="form-control floating-label" placeholder="nombre" id="name" name="name" required/>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="last_name" class="col-lg-3">Apellidos</label>
+                <div class="col-lg-9">
+                    <input type="text" class="form-control floating-label" placeholder="apellidos" id="last_name" name="last_name" required/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="email" class="col-lg-3">Correo</label>
                 <div class="col-lg-9">
-                    <input type="email" class="form-control floating-label" placeholder="Correo" id="email" name="email"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="about_me" class="col-lg-3">Acerca de ti</label>
-                <div class="col-lg-9">
-                    <textarea class="form-control floating-label" rows="3" placeholder="acerca de mi" id="about_me" name="about_me"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="sign" class="col-lg-3">Firma</label>
-                <div class="col-lg-9">
-                    <input type="text" class="form-control floating-label" placeholder="firma" id="sign" name="sign"/>
+                    <input type="email" class="form-control floating-label" placeholder="Correo" id="email" name="email" required/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="date" class="col-lg-3">Fecha de nacimiento</label>
                 <div class="col-lg-9">
-                    <input type="text" class="form-control floating-label" placeholder="date" id="sign" name="date"/>
+                    <input type="date" class="form-control floating-label" placeholder="date" id="date" name="date" required/>
                 </div>
             </div>
             <div class="form-group">
                 <label for="sex" class="col-lg-3">Sexo</label>
                 <div class="col-lg-9">
-                    <select name="sex" id="sex" class="form-control">
+                    <select name="sex" id="sex" class="form-control" required>
                         <option value="U">Sin definir</option>
                         <option value="M">Masculino</option>
                         <option value="W">Femenino</option>
@@ -67,13 +61,13 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="civil_status" class="col-lg-3">estado civil</label>
+                <label for="civil_status" class="col-lg-3">Estado civil</label>
                 <div class="col-lg-9">
                     <select name="civil_status" id="civil_status" class="form-control">
-                        <option value="">Soltero</option>
-                        <option value="">Casado</option>
-                        <option value="">Con novi@</option>
-                        <option value="">relacion complicada</option>
+                        <option value="S">Soltero</option>
+                        <option value="M">Casado</option>
+                        <option value="F">Con novi@</option>
+                        <option value="C">relacion complicada</option>
                     </select>
                 </div>
             </div>
@@ -84,12 +78,21 @@
                 </a>
             </div>
             <div class="form-group col-lg-6">
-                <button class="btn btn-primary btn-lg" type="submit">
+                <button class="btn btn-primary btn-lg" type="submit" id="create">
                     <i class="fa fa-sign-in fa-fw"></i>
                     Crear cuenta ahora
                 </button>
             </div>
         </fieldset>
     </form>
-
+{% endblock %}
+{% block script %}
+    <script src="{% static 'own/create_account.js' %}"></script>
+    {% if sms %}
+        <script>
+            toastr.options.closeButton = true;
+            toastr.options.positionClass = 'toast-top-right';
+            toastr.error('{{ sms }}');
+        </script>
+    {% endif %}
 {% endblock %}

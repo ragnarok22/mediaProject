@@ -1,7 +1,11 @@
 {% for user in users_staff %}
     <div class="list-group-item">
         <div class="row-picture">
-            <img class="circle" src="/{{ user.photo }}" alt="{{ user.user.username }}">
+            {% if user.photo %}
+                <img class="circle" src="/{{ user.photo }}" alt="{{ user.user.username }}">
+            {% else %}
+                <div class="circle"><i class="fa fa-user fa-fw"></i></div>
+            {% endif %}
         </div>
         <div class="row-content">
             <h4 class="list-group-item-heading">{{ user.user.get_full_name }}</h4>
