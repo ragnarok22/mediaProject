@@ -66,6 +66,10 @@ def friendship(request, id_receiver):
     return redirect(reverse('account:dashboard'))
 
 
+def notification(request):
+    pass
+
+
 def users(request):
     users_list = UserProfile.objects.all()
     return render(request, 'users.html', locals())
