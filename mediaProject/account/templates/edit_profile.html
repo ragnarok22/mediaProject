@@ -2,25 +2,26 @@
     <form role="form" method="post">
         {% csrf_token %}
         <label for="name-change">Nombre</label>
-        <input id="name-change" name="name" class="form-control" value="{{ profile.user.get_full_name }}">
+        <input id="name-change" name="name" class="form-control" value="{{ profile.user.get_full_name }}" required>
         <label for="email-change">Correo</label>
-        <input id="email-change" name="email" class="form-control" value="{{ profile.user.email }}">
-        <input type="submit" value="Salvar cambios">
+        <input id="email-change" name="email" class="form-control" value="{{ profile.user.email }}" required>
+        <input type="submit" value="Salvar cambios" name="save" class="btn btn-success">
     </form>
 </div>
 <div class="col-lg-4">
-    <div class="col-lg-4">
-        {% if profile.photo %}
-            <img src="/{{ profile.photo }}" alt="{{ profile.user.username }}" id="photo" class="img-circle" width="80" height="80">
-        {% else %}
-            <div><i class="fa fa-user"></i></div>
-        {% endif %}
-    </div>
-    <div class="col-lg-8">
-        <p>Aqu&iacute; puedes editar tu foto de perfil</p>
-        <input type="file" value="hola" class="form-control">
-    </div>
-    <button class="btn btn-default pull-left">Remover foto</button>
+        <div class="col-lg-4">
+            {% if profile.photo %}
+                <img src="/{{ profile.photo }}" alt="{{ profile.user.username }}" id="photo" class="img-circle" width="80" height="80">
+            {% else %}
+                <div><i class="fa fa-user"></i></div>
+            {% endif %}
+        </div>
+        <div class="col-lg-8">
+            <p>Aqu&iacute; puedes editar tu foto de perfil</p>
+            <input type="file" id="picture" multiple class="form-control" value="picture">
+        </div>
+        <input type="button" class="btn btn-default pull-left" value="Remover foto">
+    </form>
 </div>
 {% block script %}
     <script>

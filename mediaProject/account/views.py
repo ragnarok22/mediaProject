@@ -14,7 +14,7 @@ def user_login_check(user):
 @user_passes_test(user_login_check)
 def create_account(request):
     if request.method == 'POST':
-        username= request.POST['username']
+        username = request.POST['username']
         password = request.POST['password']
         name = request.POST['name']
         last_name = request.POST['last_name']
@@ -89,27 +89,37 @@ def dashboard(request):
         user = request.user
         return render(request, 'index.html', locals())
     else:
-        email = request.POST.get('email', "")
-        subject = request.POST.get('subject', "")
-        message = request.POST.get('message', "")
-        if email and subject and message:
-            try:
-                # email = EmailMultiAlternatives(subject, message, 'rhernandeza@facinf.uho.edu.cu',
-                # ['rhernandeza@facinf.uho.edu.cu'])
-                # message_html = '<h1>' + message + '</h1>'
-                # email.attach_alternative(message_html, 'text/html')
-                # email.send(False)
-                subject = '[The Wall] ' + subject
-                send_mail(subject, message, 'rhernandeza@facinf.uho.edu.cu', ['rhernandeza@facinf.uho.edu.cu'], False,
-                          'rhernandeza', 'seabiskuit32+')
-            except BadHeaderError:
-                error = True
-                message_error = 'Se ha encontrado una cabecera invalida'
+        if "send" in request.POST:
+            email = request.POST.get('email', "")
+            subject = request.POST.get('subject', "")
+            message = request.POST.get('message', "")
+            if email and subject and message:
+                try:
+                    # email = EmailMultiAlternatives(subject, message, 'rhernandeza@facinf.uho.edu.cu',
+                    # ['rhernandeza@facinf.uho.edu.cu'])
+                    # message_html = '<h1>' + message + '</h1>'
+                    # email.attach_alternative(message_html, 'text/html')
+                    # email.send(False)
+                    subject = '[The Wall] ' + subject
+                    send_mail(subject, message, 'rhernandeza@facinf.uho.edu.cu', ['rhernandeza@facinf.uho.edu.cu'],
+                              False, 'rhernandeza', 'seabiskuit32+')
+                except BadHeaderError:
+                    error = True
+                    message_error = 'Se ha encontrado una cabecera invalida'
+                    return render(request, 'index.html', locals())
                 return render(request, 'index.html', locals())
-            return render(request, 'index.html', locals())
-        else:
-            error = True
-            message_error = 'Debe de llenar todos los campos'
+            else:
+                error = True
+                message_error = 'Debe de llenar todos los campos'
+                return render(request, 'index.html', locals())
+        else:  # si "save" in request.POST
+            full_name = request.POST.get('name', "")
+            email = request.POST.get('email', "")
+            user = request.user
+            user.first_name = full_name.split(" ")[0]
+            user.last_name = " ".join(full_name.split(" ")[1:])
+            user.email = email
+            user.save()
             return render(request, 'index.html', locals())
 
 
