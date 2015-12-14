@@ -4,7 +4,7 @@ from .views import login_view, terms, about, privacy, dashboard, logout_view, co
 
 
 urlpatterns = [
-    url(r'^login/$', login_view, name='login'),
+    url(r'^$', login_view, name='login'),
     url(r'^logout/$', logout_view, name='logout'),
 
     url(r'^dashboard/$', dashboard, name='dashboard'),
