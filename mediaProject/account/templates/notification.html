@@ -1,0 +1,7 @@
+<div>
+    {% for friend in friend_request %}
+        <p>{{ friend.sender }} quiere ser su amigo <a href="#" class="btn btn-info">ver perfil</a></p>
+        {% empty %}
+        <p>No hay nuevas notificaciones</p>
+    {% endfor %}
+</div>
