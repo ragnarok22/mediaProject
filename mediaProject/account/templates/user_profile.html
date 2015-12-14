@@ -14,9 +14,11 @@
     {% endif %}
 </div>
 <div class="col-lg-8">
-    <h2>{{ profile.user.username }}' Wall
+    <h2>{{ profile.user.username }}'s Wall
         {% if is_my_profile %}
             <a href="#" class="btn btn-flat btn-primary col-lg-push-5" id="edit-profile-user">editar perfil</a>
+            {% else %}
+            <a href="{% url 'account:friendship' profile.user.id %}" class="btn btn-flat btn-primary col-lg-push-5" id="send-friendship">Solicitud de amistad</a>
         {% endif %}
     </h2>
     <ul class="nav nav-tabs" style="margin-bottom: 15px">

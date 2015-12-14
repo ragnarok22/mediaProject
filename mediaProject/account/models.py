@@ -43,4 +43,4 @@ class Friendship(models.Model):
     status = models.CharField(max_length=1, choices=STATUS_CHOICE)
 
     def __str__(self):
-        return '%s want be a friend to %s' % (self.sender.user.first_name, self.recivied.user.first_name)
+        return '%s want be a friend to %s' % (self.sender.user.first_name, self.receiver.user.first_name)

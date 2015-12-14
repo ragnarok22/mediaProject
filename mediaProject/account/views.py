@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.mail import BadHeaderError, send_mail
-from .models import UserProfile
+from .models import UserProfile, Friendship
 
 
 def user_login_check(user):
@@ -54,8 +54,16 @@ def user_update(request, pk):
     return render(request, 'edit_profile.html', locals())
 
 
-def friendship(request):
-    pass
+@login_required
+def friendship(request, id_receiver):
+    user_sender = UserProfile.objects.get(user=request.user)
+    user_receiver = UserProfile.objects.get(user_id=id_receiver)
+    friend = Friendship()
+    friend.sender = user_sender
+    friend.receiver = user_receiver
+    friend.status = 1
+    friend.save()
+    return redirect(reverse('account:dashboard'))
 
 
 def users(request):

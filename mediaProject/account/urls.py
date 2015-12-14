@@ -17,7 +17,7 @@ urlpatterns = [
     url(r'^profile/(?P<pk>[0-9]+)/$', user_profile, name='profile'),
     url(r'^edit/profile/(?P<pk>[0-9]+)/$', user_update, name='edit_profile'),
 
-    url(r'^friendship/$', friendship, name='friendship'),
+    url(r'^friendship/(?P<id_receiver>[0-9]+)/$', friendship, name='friendship'),
     url(r'^create/account/$', create_account, name='create_account'),
 
     url(r'^contact/us/$', contact_us, name='contact'),
