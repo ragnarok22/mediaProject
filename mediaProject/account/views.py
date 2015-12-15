@@ -97,6 +97,7 @@ def user_profile(request, pk):
 @login_required
 def user_login(request):
     users = UserProfile.objects.filter(is_conected=True).exclude(user_id=request.user.pk)
+    friend = Friendship.objects.filter(Q(status=0) & (Q(sender=request.user) | Q(receiver=request.user)))
     return render(request, 'user_login.html', locals())
 
 
