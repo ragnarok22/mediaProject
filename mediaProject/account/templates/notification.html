@@ -2,7 +2,7 @@
     {% for friend in friend_request %}
         <p class="lead">{{ friend.sender }} quiere ser su amigo
             <a href="#" id="user-profile{{ forloop.counter }}" class="btn btn-info">ver perfil</a>
-            <a href="#" class="btn btn-success">aceptar solicitud</a>
+            <a href="{% url 'account:accept_friendship' friend.id %}" class="btn btn-success">aceptar solicitud</a>
         </p>
         <script>
             join_click_by_ajax("#user-profile{{ forloop.counter }}", "#information", "{% url 'account:profile' friend.sender.pk %}", "#spinner-information");

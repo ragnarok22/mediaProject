@@ -39,6 +39,7 @@ class Friendship(models.Model):
     STATUS_CHOICE = (
         ('0', 'Accepted'),
         ('1', 'Denied'),
+        ('2', 'Pending'),
     )
     status = models.CharField(max_length=1, choices=STATUS_CHOICE)
     date = models.DateField()

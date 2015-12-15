@@ -64,18 +64,21 @@ def friendship(request, id_receiver):
     friend = Friendship()
     friend.sender = user_sender
     friend.receiver = user_receiver
-    friend.status = 1
+    friend.status = 2
     friend.date = timezone.now()
     friend.save()
     return redirect(reverse('account:dashboard'))
 
 
 def accept_friendship(request, id):
-    user_receiver = 1
+    solicitude = Friendship.objects.get(id=id)
+    solicitude.status = 0
+    solicitude.save()
+    return redirect(reverse('account:dashboard'))
 
 
 def notification(request):
-    friend_request = Friendship.objects.filter(Q(status=1) & Q(receiver=request.user))
+    friend_request = Friendship.objects.filter(Q(status=2) & Q(receiver=request.user))
     return render(request, 'notification.html', locals())
 
 
@@ -106,7 +109,7 @@ def user_staff_login(request):
 @login_required
 def dashboard(request):
     if request.method == 'GET':
-        friend_request = Friendship.objects.filter(Q(status=1) & Q(receiver=request.user)).count()
+        friend_request = Friendship.objects.filter(Q(status=2) & Q(receiver=request.user))
         users = UserProfile.objects.filter(is_conected=True)
         user = request.user
         return render(request, 'index.html', locals())

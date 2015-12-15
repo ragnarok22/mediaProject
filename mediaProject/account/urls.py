@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from .views import login_view, terms, about, privacy, dashboard, logout_view, contact_us, user_login, friendship,\
-    create_account, user_staff_login, user_profile, information, user_update, users, notification
+    create_account, user_staff_login, user_profile, information, user_update, users, notification, accept_friendship
 
 
 urlpatterns = [
@@ -18,6 +18,8 @@ urlpatterns = [
     url(r'^edit/profile/(?P<pk>[0-9]+)/$', user_update, name='edit_profile'),
 
     url(r'^notification/$', notification, name='notification'),
+
+    url(r'^accept/friendship/(?P<id>[0-9]+)/$', accept_friendship, name='accept_friendship'),
 
     url(r'^friendship/(?P<id_receiver>[0-9]+)/$', friendship, name='friendship'),
     url(r'^create/account/$', create_account, name='create_account'),
