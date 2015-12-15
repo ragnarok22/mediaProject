@@ -70,6 +70,10 @@ def friendship(request, id_receiver):
     return redirect(reverse('account:dashboard'))
 
 
+def accept_friendship(request, id):
+    user_receiver = 1
+
+
 def notification(request):
     friend_request = Friendship.objects.filter(Q(status=1) & Q(receiver=request.user))
     return render(request, 'notification.html', locals())
