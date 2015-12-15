@@ -36,7 +36,13 @@
                         </li>
                         <li><a href="#" id="edit-profile"><i class="mdi-image-edit"></i> Editar Perfil</a></li>
                         <li><a href="#"><i class="mdi-communication-email"></i> Mensajes <span class="badge">3</span></a></li>
-                        <li><a href="#"><i class="mdi-social-notifications-none"></i> Notificaciones <span class="badge">5</span></a></li>
+                        <li><a href="#" id="notification"><i class="mdi-social-notifications-none"></i>
+                            Notificaciones
+                            <span class="badge">
+                                {% if friend_request %}
+                                    <span class="badge">{{ friend_request }}</span>
+                                {% endif %}
+                            </span></a></li>
                         <li class="divider"></li>
                         <li>
                             <a href="{% url 'account:logout' %}"> <i class="fa fa-sign-out"></i> Salir</a>

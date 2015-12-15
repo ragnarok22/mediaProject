@@ -34,8 +34,8 @@ class UserProfile(models.Model):
 
 
 class Friendship(models.Model):
-    sender = models.ForeignKey(UserProfile, related_name='+')
-    receiver = models.ForeignKey(UserProfile)
+    sender = models.ForeignKey(User, related_name='+')
+    receiver = models.ForeignKey(User)
     STATUS_CHOICE = (
         ('0', 'Accepted'),
         ('1', 'Denied'),
@@ -44,4 +44,4 @@ class Friendship(models.Model):
     date = models.DateField()
 
     def __str__(self):
-        return '%s want be a friend to %s' % (self.sender.user.first_name, self.receiver.user.first_name)
+        return '%s want be a friend to %s' % (self.sender.first_name, self.receiver.first_name)

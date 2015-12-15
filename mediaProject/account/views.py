@@ -1,5 +1,8 @@
+from django.utils import timezone
+
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
+from django.db.models import Q
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -56,18 +59,20 @@ def user_update(request, pk):
 
 @login_required
 def friendship(request, id_receiver):
-    user_sender = UserProfile.objects.get(user=request.user)
-    user_receiver = UserProfile.objects.get(user_id=id_receiver)
+    user_sender = User.objects.get(id=request.user.id)
+    user_receiver = User.objects.get(id=id_receiver)
     friend = Friendship()
     friend.sender = user_sender
     friend.receiver = user_receiver
     friend.status = 1
+    friend.date = timezone.now()
     friend.save()
     return redirect(reverse('account:dashboard'))
 
 
 def notification(request):
-    pass
+    friend_request = Friendship.objects.filter(Q(status=1) & Q(receiver=request.user))
+    return render(request, 'notification.html', locals())
 
 
 def users(request):
@@ -97,6 +102,7 @@ def user_staff_login(request):
 @login_required
 def dashboard(request):
     if request.method == 'GET':
+        friend_request = Friendship.objects.filter(Q(status=1) & Q(receiver=request.user)).count()
         users = UserProfile.objects.filter(is_conected=True)
         user = request.user
         return render(request, 'index.html', locals())
