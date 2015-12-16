@@ -1,0 +1,9 @@
+{{ sms }}
+{{ name }}
+{{ about }}
+<form method="get" action="{% url 'group:edit_group_save' group.id %}">
+    {% csrf_token %}
+    <input type="text" placeholder="name" class="form-control" name="name-group" value="{{ group.name }}">
+    <input type="text" placeholder="about" class="form-control" name="about-group" value="{{ group.about }}">
+    <input type="submit" value="Editar" class="btn btn-success" name="edit-group">
+</form>

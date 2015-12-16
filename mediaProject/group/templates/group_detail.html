@@ -2,8 +2,9 @@
     <p>{{ group.name }}</p>
     <small> creado por <cite title="{{ group.owner.get_full_name }}">{{ group.owner.username }}</cite></small>
 </h1>
+<blockquote>{{ group.about }}</blockquote>
 {% if group.owner == request.user %}
-    <button class="btn btn-warning">Editar grupo</button>
+    <a class="btn btn-warning" href="{% url 'group:edit_group' group.id %}" id="edit">Editar grupo</a>
 {% endif %}
 <h2 class="lead">Miembros</h2>
 {% for member in members %}
@@ -13,6 +14,8 @@
         </ul>
     </div>
     <script>
+        join_click_by_ajax("#user-profile{{ forloop.counter }}", "#information", "{% url 'account:profile' member.person.id %}", "#spinner-information");
+        join_click_by_ajax("#edit", "#information", "{% url 'group:edit_group' group.id %}", "#spinner-information");
         join_click_by_ajax("#user-profile{{ forloop.counter }}", "#information", "{% url 'account:profile' member.person.id %}", "#spinner-information");
     </script>
 {% empty %}

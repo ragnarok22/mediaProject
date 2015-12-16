@@ -41,3 +41,24 @@ def join_group(request, id):
         return redirect("/")
     else:
         return redirect("/")
+
+
+def edit_group(request, id):
+    group = Group.objects.get(id=id)
+    name = request.GET.get('name-group', None)
+    about = request.GET.get('about-group', None)
+    return render(request, 'edit_group.html', locals())
+
+
+def edit_group_save(request, id):
+    group = Group.objects.get(id=id)
+    name = request.GET.get('name-group', None)
+    about = request.GET.get('about-group', None)
+    if name is not None and about is not None:
+        group.name = name
+        group.about = about
+        group.save()
+        sms = "se salvo correctamente"
+        return redirect("/")
+    sms = "todos los campos son requeridos"
+    return redirect("/")

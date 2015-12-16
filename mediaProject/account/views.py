@@ -128,10 +128,11 @@ def dashboard(request):
                 group = Group(name=name, about=about, owner=request.user)
                 group.save()
                 return redirect(reverse('account:dashboard'))
-        friend_request = Friendship.objects.filter(Q(status=2) & Q(receiver=request.user))
-        users = UserProfile.objects.filter(is_conected=True)
-        user = request.user
-        return render(request, 'index.html', locals())
+        else:
+            friend_request = Friendship.objects.filter(Q(status=2) & Q(receiver=request.user))
+            users = UserProfile.objects.filter(is_conected=True)
+            user = request.user
+            return render(request, 'index.html', locals())
     else:
         if "send" in request.POST:
             email = request.POST.get('email', "")
