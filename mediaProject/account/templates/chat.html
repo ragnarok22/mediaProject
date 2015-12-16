@@ -44,11 +44,11 @@
         var myip ;
 
         websocket.onopen = function(ev) {
-            $('#message_box').append(createLi('System','{% static "conectado.png" %}','Connected !!!'));
+            $('#message_box').append(createLi('System','{% static "conectado.png" %}','Usted se ha conectado correctamente!!!'));
         };
 
         websocket.onerror	= function(ev){
-            $('#message_box').append(createLi('System','{% static "error.png" %}','Error Occurred '+ev.data));
+            $('#message_box').append(createLi('System','{% static "error.png" %}',':( ups, ha ocurrido un error: '+ev.data));
         };
 
         websocket.onclose 	= function(ev){
