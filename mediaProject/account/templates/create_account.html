@@ -1,57 +1,50 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block title %}Crear cuenta{% endblock %}
-
+{% block title %}Creando mi cuenta{% endblock %}
 {% block content %}
-    <form method="post" class="form-horizontal container">
-        {% csrf_token %}
+    <form  class="form-horizontal container" method = "post">
+        {% csrf_token %}<br>
         <fieldset>
-            <legend>Crearse una cuenta</legend>
+            <legend class="col-lg-10 mi">Creando mi cuenta</legend>
             <div class="form-group">
-                <label for="username" class="col-lg-3">Nombre de usuario</label>
-                <div class="col-lg-9">
-                    <input type="text" class="form-control floating-label" placeholder="nombre de usuario" id="username" name="username" required/>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control floating-label" placeholder="Usuario" id="username" name="username" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="password" class="col-lg-3">Contraseña</label>
-                <div class="col-lg-9">
-                    <input type="password" class="form-control floating-label" placeholder="contraseña" id="password" name="password" required/>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control floating-label" placeholder="Contraseña" id="password" name="password" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="password-check" class="col-lg-3">Por favor, repita la contraseña</label>
-                <div class="col-lg-9">
-                    <input type="password" class="form-control floating-label" placeholder="Repita la contraseña" id="password-check" name="password-check" required/>
+                <div class="col-lg-10">
+                    <input type="password" class="form-control floating-label" placeholder="Reiterar Contraseña" id="password-check" name="password-check" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="name" class="col-lg-3">Nombre</label>
-                <div class="col-lg-9">
-                    <input type="text" class="form-control floating-label" placeholder="nombre" id="name" name="name" required/>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control floating-label" placeholder="Nombre" id="name" name="name" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="last_name" class="col-lg-3">Apellidos</label>
-                <div class="col-lg-9">
-                    <input type="text" class="form-control floating-label" placeholder="apellidos" id="last_name" name="last_name" required/>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control floating-label" placeholder="Apellidos" id="last_name" name="last_name" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="email" class="col-lg-3">Correo</label>
-                <div class="col-lg-9">
+                <div class="col-lg-10">
                     <input type="email" class="form-control floating-label" placeholder="Correo" id="email" name="email" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="date" class="col-lg-3">Fecha de nacimiento</label>
+                <label id="FN" class="col-lg-1" for="born_date">Fecha de nacimiento</label>
                 <div class="col-lg-9">
-                    <input type="date" class="form-control floating-label" placeholder="yyyy-mm-dd" id="date" name="date" required/>
+                    <input type="date" class="form-control" id="date" name="date" required/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="sex" class="col-lg-3">Sexo</label>
+                <label id="S" class="col-lg-1" for="sex">Sexo</label>
                 <div class="col-lg-9">
                     <select name="sex" id="sex" class="form-control" required>
                         <option value="U">Sin definir</option>
@@ -61,7 +54,7 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="civil_status" class="col-lg-3">Estado civil</label>
+                <label id="EC" class="col-lg-1" for="civil_status">Estado civil</label>
                 <div class="col-lg-9">
                     <select name="civil_status" id="civil_status" class="form-control">
                         <option value="S">Soltero</option>
@@ -71,16 +64,16 @@
                     </select>
                 </div>
             </div>
-            <div class="form-group col-lg-6">
-                <a href="{% url 'account:login' %}" class="btn btn-primary btn-lg">
-                    <i class="fa fa-minus-circle fa-fw"></i>
-                    Ya tengo una cuenta
+            <div class="form-group col-lg-6 col-lg-push-1">
+                <a href="{% url 'account:login' %}" class="btn btn-primary btn-lg move">
+                    <i class="fa fa-reply-all"></i>
+                    Volver atrás
                 </a>
             </div>
-            <div class="form-group col-lg-6">
-                <button class="btn btn-primary btn-lg" type="submit" id="create">
-                    <i class="fa fa-sign-in fa-fw"></i>
-                    Crear cuenta ahora
+            <div class="form-group col-lg-6 col-lg-push-1">
+                <button class="btn btn-primary btn-lg move" type="submit" id="create">
+                    <i class="fa fa-check-square-o"></i>
+                    Crear ahora
                 </button>
             </div>
         </fieldset>
