@@ -1,8 +1,12 @@
-<h1>T&iacute;tulo: {{ picture.title }}</h1>
+<h1>{{ picture.title }}<small> por {{ picture.owner }}</small></h1>
 <h3>acerca: {{ picture.about }}</h3>
-<h5>Subido por: {{ picture.owner }}</h5>
-<h2>Comentarios</h2>
+<img src="/{{ picture.picture }}" alt="{{ picture.title }}" width="500" height="350">
+<h2 id="coments">Comentarios</h2>
 {% for comment in comments %}
     <p>{{ comment.comments }}</p>
 {% endfor %}
-<img src="/{{ picture.picture }}" alt="{{ picture.title }}">
+<form action="{% url 'picture:comment_picture' picture.id %}" method="get">
+    {% csrf_token %}
+    <textarea class="form-control" placeholder="Haga su comentario aqu&iacute;" name="comment"></textarea>
+    <input type="submit" value="Comentar" class="btn btn-success">
+</form>

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Photo, Comment
 
 
@@ -17,3 +17,13 @@ def picture_details(request, pk):
 def last_picture(request):
     pictures = Photo.objects.all().order_by("-pub_date")[:3]
     return render(request, 'last_pictures.html', locals())
+
+
+def comment_picture(request, id):
+    picture = Photo.objects.get(id=id)
+    comment = request.GET.get("comment", None)
+    comm = Comment()
+    comm.comments = comment
+    comm.photos = picture
+    comm.save()
+    return redirect("/")

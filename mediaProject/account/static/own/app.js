@@ -37,7 +37,6 @@ $(document).ready(function () {
     loaderPicture = $('#spinner-last-picture');
     loaderPicture.css('display', 'inline');
     $('#last-pictures').load('/pictures/last', function () {
-        console.log("entre");
         loaderPicture.css('display', 'none');
     });
 });
