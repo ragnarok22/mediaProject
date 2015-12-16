@@ -18,7 +18,7 @@
                             <div class="panel-footer">
                                 <div class="input-group">
                                     <input style="width:100px" id="name" type="text" class="form-control input-sm" name="name"  placeholder="Tu nick" maxlength="10"   />
-                                    <input style="width:180px" id="btn-input" type="text" class="form-control input-sm" placeholder="Escribe tu mensaje aqu&iacute;" />
+                                    <input style="width:380px" id="btn-input" type="text" class="form-control input-sm" placeholder="Escribe tu mensaje aqu&iacute;" />
                                     <div class="input-group-btn">
                                         <button class="btn btn-primary" id="btn-chat"><i class="fa fa-send"></i> Enviar</button>
                                     </div>
@@ -108,6 +108,8 @@
         }
 
         var name = $('#name');
+        name.attr("disabled", "disabled");
+        name.css("display", "none");
 
         $('#btn-chat').click(function(){
             var message = $('#btn-input');
