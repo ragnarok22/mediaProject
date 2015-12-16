@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <div class="col-lg-8">
     <form role="form" method="post">
         {% csrf_token %}
@@ -13,7 +14,7 @@
             {% if profile.photo %}
                 <img src="/{{ profile.photo }}" alt="{{ profile.user.username }}" id="photo" class="img-circle" width="80" height="80">
             {% else %}
-                <div><i class="fa fa-user"></i></div>
+                <img src="{% static 'user.png' %}" alt="{{ profile.user.username }}" id="photo" class="img-circle" width="80" height="80">
             {% endif %}
         </div>
         <div class="col-lg-8">
