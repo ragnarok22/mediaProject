@@ -11,9 +11,12 @@
                 {% if member.group.id == group.id %}
                     <div class="row">
                         <ul>
-                            <li id="members">{{ member.person }}</li>
+                            <li id="members"><a href="{% url 'account:profile' member.person.id %}" id="user-profile{{ forloop.counter }}">{{ member.person }}</a></li>
                         </ul>
                     </div>
+                    <script>
+                        join_click_by_ajax("#user-profile{{ forloop.counter }}", "#information", "{% url 'account:profile' member.person.id %}", "#spinner-information");
+                    </script>
                 {% endif %}
             {% empty %}
                 <p>No tiene miembros</p>
