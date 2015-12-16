@@ -1,9 +1,9 @@
 {% for picture in pictures %}
-    <h1>{{ picture.title }}</h1>
+    <h2 id="title">Título: {{ picture.title }}</h2>
     <p>about: {{ picture.about }}</p>
     <p>creador: {{ picture.owner }}</p>
-    <img src="/{{ picture.picture }}" alt="{{ picture.title }}">
-    <h3>Commentarios</h3>
+    <img src="/{{ picture.picture }}" alt="{{ picture.title }}" width="500" height="350">
+    <h3 id="coments">Comentarios</h3>
     {% for comment in comments %}
         {% if comment.photos.id == picture.id %}
             <p>{{ comment.comments }}</p>
