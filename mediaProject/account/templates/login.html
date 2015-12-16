@@ -74,5 +74,12 @@
                 toastr.error('{{ message }}');
             {% endif %}
         </script>
+        {% if request.GET.sms_ok %}
+            <script>
+                toastr.options.closeButton = true;
+                toastr.options.positionClass = 'toast-top-right';
+                toastr.success('{{ request.GET.sms_ok }}');
+            </script>
+        {% endif %}
     {% endblock %}
 {% endblock %}

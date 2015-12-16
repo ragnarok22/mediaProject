@@ -172,6 +172,20 @@
                 toastr.error('{{ message_error }}');
             </script>
         {% endif %}
+        {% if request.GET.sms %}
+            <script>
+                toastr.options.closeButton = true;
+                toastr.options.positionClass = 'toast-top-right';
+                toastr.error('{{ request.GET.sms }}');
+            </script>
+        {% endif %}
+        {% if request.GET.sms_ok %}
+            <script>
+                toastr.options.closeButton = true;
+                toastr.options.positionClass = 'toast-top-right';
+                toastr.success('{{ request.GET.sms_ok }}');
+            </script>
+        {% endif %}
         <script>
             join_click_by_ajax("#profile", "#information", "{% url 'account:profile' user.pk %}", "#spinner-information");
             join_click_by_ajax("#edit-profile", "#information", "{% url 'account:edit_profile' user.pk %}", "#spinner-information");

@@ -69,12 +69,17 @@ def friendship(request, id_receiver):
     user_sender = User.objects.get(id=request.user.id)
     user_receiver = User.objects.get(id=id_receiver)
     friend = Friendship()
+    exits = Friendship.objects.filter(receiver_id=id_receiver)
+    if exits:
+        sms = "ya envio una peticion a %s" % user_receiver.username
+        return redirect(reverse("account:dashboard") + "?sms=%s" % sms)
     friend.sender = user_sender
     friend.receiver = user_receiver
     friend.status = 2
     friend.date = timezone.now()
     friend.save()
-    return redirect(reverse('account:dashboard'))
+    sms_ok = "se le ha enviado una peticion a %s" % user_receiver.username
+    return redirect(reverse('account:dashboard')+ "?sms_ok=%s" % sms_ok)
 
 
 def accept_friendship(request, id):
@@ -175,7 +180,7 @@ def information(request):
 
 def login_view(request):
     if request.user.is_authenticated():
-        return redirect(reverse('account:dashboard'))
+        return redirect(reverse('account:dashboard') + "?sms_ok=usted ya esta logeado")
     else:
         if request.method == 'POST':
             username = request.POST['username']
@@ -205,7 +210,7 @@ def logout_view(request):
     profile.is_conected = False
     profile.save()
     logout(request)
-    return redirect(reverse('account:login'))
+    return redirect(reverse('account:login') + "?sms_ok=hasta pronto")
 
 
 def chat(request):
