@@ -35,7 +35,9 @@ def create_group(request):
 def join_group(request, id):
     group = Group.objects.get(id=id)
     member = MemberShip(group=group, person=request.user, inviter=request.user, invite_reason="")
-    exist = MemberShip.objects.filter(Q(person=request.user) | Q(group=group))
+    exist = MemberShip.objects.filter(Q(person=request.user) & Q(group=group))
     if not exist:
         member.save()
-    return redirect("/")
+        return redirect("/")
+    else:
+        return redirect("/")

@@ -5,7 +5,7 @@
         {% for group in groups %}
             <div class="row">
                 <h3 id="group">{{ group.name }}</h3>
-                <button class="btn btn-default">unirse</button>
+                <a class="btn btn-default" href="{% url 'group:join_group' group.id %}">unirse</a>
             </div>
             {% for member in members %}
                 {% if member.group.id == group.id %}
