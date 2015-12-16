@@ -5,7 +5,7 @@
             {% if user.photo %}
                 <img class="circle" src="/{{ user.photo }}" alt="{{ user.user.username }}">
             {% else %}
-                <img class="circle" src="{% static 'favicon.png' %}" alt="{{ user.user.username }}">
+                <img class="circle" src="{% static 'user.png' %}" alt="{{ user.user.username }}">
             {% endif %}
         </div>
         <div class="row-content">

@@ -1,3 +1,4 @@
+{% load staticfiles %}
 {% if own.user.username != profile.user.username %}
     {% if profile.is_conected %}
         <p>el usuario esta conectado</p>
@@ -10,7 +11,7 @@
     {% if profile.photo %}
         <img src="/{{ profile.photo }}" alt="foto of user" width="150" class="img-circle"><br>
     {% else %}
-        <div class="circle"><i class="fa fa-user fa-fw"></i></div>
+        <img src="{% static 'user.png' %}" alt="foto of user" width="150" class="img-circle"><br>
     {% endif %}
 </div>
 <div class="col-lg-8">
