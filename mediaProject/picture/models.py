@@ -12,6 +12,7 @@ class Photo(models.Model):
     picture = models.ImageField(upload_to=url)
     title = models.CharField(max_length=100)
     about = models.CharField(max_length=200)
+    pub_date = models.DateField()
 
     def __str__(self):
         return "%s del usuario %s" % (self.title, self.owner)

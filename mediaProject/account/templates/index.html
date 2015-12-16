@@ -70,30 +70,20 @@
 
         <!--informacion adicionada recientemente-->
         <div class="col-lg-4">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <p>ultimas fotos subidas</p>
-                    <div class="list-group">
-                        <div class="list-group-item">
-                            <div class="row-picture">
-                                <img class="circle" src="{% static 'the_wall.jpg' %}" alt="icon">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Ultimas fotos</h3>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="list-group">
+                            <div class="text-center">
+                                <i class="fa fa-spinner fa-spin fa-5x" id="spinner-last-picture" style="display: none;"></i>
                             </div>
-                            <div class="row-content">
-                                <h4 class="list-group-item-heading">Tile with avatar</h4>
-                                <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus</p>
-                            </div>
-                        </div>
-                        <div class="list-group-separator"></div>
-                        <div class="list-group-item">
-                            <div class="row-picture">
-                                <img class="circle" src="{% static 'the_wall.jpg' %}" alt="icon">
-                            </div>
-                            <div class="row-content">
-                                <h4 class="list-group-item-heading">Tile with another avatar</h4>
-                                <p class="list-group-item-text">Maecenas sed diam eget risus varius blandit.</p>
+                            <div id="last-pictures">
+                                {#                                        ultimas fotos adicionadas recientemente#}
                             </div>
                         </div>
-                        <div class="list-group-separator"></div>
                     </div>
                 </div>
             </div>

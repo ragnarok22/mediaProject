@@ -1,0 +1,15 @@
+{% load staticfiles %}
+{% for picture in pictures %}
+    <div class="list-group-item">
+        <div class="row-picture">
+            <img class="circle" src="/{{ picture.picture }}" alt="{{ picture.title }}">
+        </div>
+        <div class="row-content">
+            <h4 class="list-group-item-heading">{{ picture.title }}</h4>
+            <p class="list-group-item-text">{{ picture.about }}</p>
+        </div>
+    </div>
+    <div class="list-group-separator"></div>
+{% empty %}
+    <h4>No hay ninguna foto adicionada recientemente</h4>
+{% endfor %}

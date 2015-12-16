@@ -32,6 +32,14 @@ $(document).ready(function () {
     $('#information').load('/informations', function () {
         loaderInfo.css('display', 'none');
     });
+
+    //mostrar las ultimas fotos subidas
+    loaderPicture = $('#spinner-last-picture');
+    loaderPicture.css('display', 'inline');
+    $('#last-pictures').load('/pictures/last', function () {
+        console.log("entre");
+        loaderPicture.css('display', 'none');
+    });
 });
 
 function printsms(sms){
