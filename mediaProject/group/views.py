@@ -1,3 +1,5 @@
+from django.db.models.query_utils import Q
+
 from django.core.urlresolvers import reverse
 from django.shortcuts import render, redirect
 from .models import Group, MemberShip
@@ -28,3 +30,12 @@ def create_group(request):
         return redirect(reverse('account:dashboard'))
     else:
         return render(request, 'create_group.html', locals())
+
+
+def join_group(request, id):
+    group = Group.objects.get(id=id)
+    member = MemberShip(group=group, person=request.user, inviter=request.user, invite_reason="")
+    exist = MemberShip.objects.filter(Q(person=request.user) | Q(group=group))
+    if not exist:
+        member.save()
+    return redirect("/")
