@@ -1,0 +1,11 @@
+{{ sms }}
+<form method="get">
+    {% csrf_token %}
+    <div class="form-group">
+        <input type="text" placeholder="Nombre del grupo" class="form-control floating-label" name="name-group" required>
+    </div>
+    <div class="form-control">
+        <input type="text" placeholder="Acerca del grupo" class="form-control floating-label" name="about-group" required>
+    </div>
+    <input type="submit" value="Crear grupo" class="btn btn-success" name="create-group">
+</form>

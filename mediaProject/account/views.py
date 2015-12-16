@@ -9,6 +9,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.core.mail import BadHeaderError, send_mail
 from .models import UserProfile, Friendship
+from group.models import Group
 
 
 def user_login_check(user):
@@ -116,6 +117,17 @@ def user_staff_login(request):
 @login_required
 def dashboard(request):
     if request.method == 'GET':
+        if "create-group" in request.GET:
+            name = request.GET.get("name-group", None)
+            about = request.GET.get("about-group", None)
+            if name is not None and about is not None:
+                exist = Group.objects.filter(name=name)
+                if exist:
+                    message_error = "ese grupo ya existe, por favor, escoja otro nombre"
+                    return render(request, 'index.html', locals())
+                group = Group(name=name, about=about, owner=request.user)
+                group.save()
+                return redirect(reverse('account:dashboard'))
         friend_request = Friendship.objects.filter(Q(status=2) & Q(receiver=request.user))
         users = UserProfile.objects.filter(is_conected=True)
         user = request.user
