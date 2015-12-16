@@ -1,14 +1,13 @@
- <div class="class-fluid col-lg-12">
-  <div class="row">
-<h2  id="U">Usuarios Registrados</h2>
-{% for user in users_list %}
-    <ul>
-    <li><a href="{% url 'account:profile' user.user.pk %}" class="user" id="user-profile{{ forloop.counter }}">{{ user.user.get_full_name }}</a><br></li>
-    </ul>
-
-    <script>
-        join_click_by_ajax("#user-profile{{ forloop.counter }}", "#information", "{% url 'account:profile' user.user.pk %}", "#spinner-information");
-    </script>
-{% endfor %}
-</div>
+<div class="class-fluid col-lg-12">
+    <div class="row">
+        <h2  id="U">Usuarios Registrados</h2>
+        {% for user in users_list %}
+            <ul>
+                <li><a href="{% url 'account:profile' user.user.pk %}" class="user" id="user-profile{{ forloop.counter }}">{{ user.user.get_full_name }}</a><br></li>
+            </ul>
+            <script>
+                join_click_by_ajax("#user-profile{{ forloop.counter }}", "#information", "{% url 'account:profile' user.user.pk %}", "#spinner-information");
+            </script>
+        {% endfor %}
+    </div>
 </div>
