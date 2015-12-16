@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.utils import timezone
 
 from django.contrib.auth.models import User
@@ -35,9 +36,14 @@ def create_account(request):
             profile.sex = sex
             user = User(username=username, email=email, first_name=name, last_name=last_name)
             user.set_password(password)
-            user.save()
-            profile.user = user
-            profile.save()
+            try:
+                user.save()
+                profile.user = user
+                profile.save()
+            except ValidationError:
+                user.delete()
+                sms = "el formato de la fecha esta mal"
+                return render(request, 'create_account.html', locals())
             return redirect(reverse('account:dashboard'))
         else:
             sms = "%s ya esta siendo usado por otro, por favor seleccione otro" % username
