@@ -1,5 +1,6 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.utils import timezone
 
 
 def url(self, filename):
@@ -28,6 +29,11 @@ class UserProfile(models.Model):
     sex = models.CharField(max_length=1, choices=SEX_CHOICES, default='U')
     civil_status = models.CharField(max_length=1, choices=CIVIL_STATUS_CHOICES, default='S')
     is_conected = models.BooleanField(default=False)
+
+    def age(self):
+        actual = timezone.now().year
+        born_year = self.born_date.year
+        return actual - born_year
 
     def __str__(self):
         return self.user.username
