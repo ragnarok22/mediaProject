@@ -39,6 +39,10 @@ footer .footer{
     margin-right: 300px;
 }
 
+#group a{
+    background-color: #006456;
+}
+
 #G{
     background: #009688;
     color: white;

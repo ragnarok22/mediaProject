@@ -1,3 +1,11 @@
+<h1>
+    <p>{{ group.name }}</p>
+    <small> creado por <cite title="{{ group.owner.get_full_name }}">{{ group.owner.username }}</cite></small>
+</h1>
+{% if group.owner == request.user %}
+    <button class="btn btn-warning">Editar grupo</button>
+{% endif %}
+<h2 class="lead">Miembros</h2>
 {% for member in members %}
     <div class="row">
         <ul>

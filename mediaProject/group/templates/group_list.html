@@ -4,9 +4,12 @@
     <div class="container-fluid">
         {% for group in groups %}
             <div class="row">
-                <h3 id="group">{{ group.name }}</h3>
+                <h3 id="group"><a href="{% url 'group:group_detail' group.pk %}" id="group{{ forloop.counter }}">{{ group.name }}</a></h3>
                 <a class="btn btn-default" href="{% url 'group:join_group' group.id %}">unirse</a>
             </div>
+            <script>
+                join_click_by_ajax("#group{{ forloop.counter }}", "#information", "{% url 'group:group_detail' group.pk %}", "#spinner-information");
+            </script>
             {% for member in members %}
                 {% if member.group.id == group.id %}
                     <div class="row">
