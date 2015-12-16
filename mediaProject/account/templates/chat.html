@@ -20,7 +20,7 @@
                                     <input style="width:100px" id="name" type="text" class="form-control input-sm" name="name"  placeholder="Tu nick" maxlength="10"   />
                                     <input style="width:180px" id="btn-input" type="text" class="form-control input-sm" placeholder="Escribe tu mensaje aqu&iacute;" />
                                     <div class="input-group-btn">
-                                        <button class="btn btn-primary" id="btn-chat">Enviar</button>
+                                        <button class="btn btn-primary" id="btn-chat"><i class="fa fa-send"></i> Enviar</button>
                                     </div>
                                 </div>
                             </div>
@@ -31,6 +31,7 @@
         </div>
     </div>
 </div>
+<img src="" alt="" >
 
 <script type="text/javascript" src="{% static 'js/jquery-2.0.1.min.js' %}"></script>
 <script type="text/javascript">
@@ -71,17 +72,22 @@
 
         function createMessage (type,msg,username) {
 
-            var img = '{% static "chrome.png" %}' ;
+            var img = '{% static "chrome.png" %}';
+
             var myname = $('#name').val(); //get user name
 
             if(username == myname){
-                img = '{% static "firefox.png" %}' ;
+                img = '{% static "firefox.png" %}';
+                {% if my %}
+                    img = "/";
+                    img += '{{ my.photo }}';
+                {% endif %}
             }
 
             if(username == 'system'){
-                var img = '{% static "conectado.png" %}' ;
+                var img = '{% static "conectado.png" %}';
                 if(type == 'desconectado'){
-                    img = '{% static "desconectado.png" %}' ;
+                    img = '{% static "desconectado.png" %}';
                 }
             }
             return createLi(username,img,msg) ;
@@ -90,8 +96,13 @@
         function createLi(username,img,text){
             var li = $(' <li class="left clearfix"><span class="chat-img pull-left"><img src="'+img+'" alt="User Avatar" class="img-circle" /></span><div class="chat-body clearfix"><div class="header"><strong class="primary-font">'+username+'</strong> </div><p>'+text+'</p></div></li>');
             var myname = $('#name').val(); //get user name
+            console.log(username);
             if(username == myname){
-                li = $(' <li class="right clearfix"><span class="chat-img pull-right"><img src="'+img+'" alt="User Avatar" class="img-circle" /></span><div class="chat-body clearfix"><div class="header"><strong class="primary-font">'+username+'</strong> </div><p>'+text+'</p></div></li>');
+                li = $(' <li class="right clearfix"><span class="chat-img pull-right"><img src="'+img+'" alt="User Avatar" class="img-circle avatar" /></span><div class="chat-body clearfix"><div class="header"><strong class="primary-font">'+username+'</strong> </div><p>'+text+'</p></div></li>');
+            }else if(username == "system" || username == "System"){
+                console.log(username + " information");
+            }else if(username != "system" || username != "System"){
+                var li = $(' <li class="left clearfix"><span class="chat-img pull-left"><img src="'+img+'" alt="User Avatar" class="img-circle avatar" /></span><div class="chat-body clearfix"><div class="header"><strong class="primary-font">'+username+'</strong> </div><p>'+text+'</p></div></li>');
             }
             return li;
         }
@@ -105,11 +116,11 @@
             var myname = name.val(); //get user name
 
             if(myname == ""){ //empty name?
-                alert("Enter your Name please!");
+                alert("Por favor entre su nick!");
                 return;
             }
             if(mymessage == ""){ //emtpy message?
-                alert("Enter Some message Please!");
+                alert("Escribe algo!");
                 return;
             }
 

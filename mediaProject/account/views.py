@@ -190,6 +190,7 @@ def logout_view(request):
 
 
 def chat(request):
+    my = UserProfile.objects.get(user=request.user)
     return render(request, 'chat.html', locals())
 
 
