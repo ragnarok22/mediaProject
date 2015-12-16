@@ -189,6 +189,10 @@ def logout_view(request):
     return redirect(reverse('account:login'))
 
 
+def chat(request):
+    return render(request, 'chat.html', locals())
+
+
 def contact_us(request):
     profile = UserProfile.objects.get(user_id=request.user.pk)
     return render(request, 'contact.html', locals())

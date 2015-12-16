@@ -8,6 +8,7 @@ $(document).ready(function () {
     join_click_by_ajax("#groups", "#information", "/group/list", "#spinner-information");
     join_click_by_ajax("#users", "#information", "/users", "#spinner-information");
     join_click_by_ajax("#notification", "#information", "/notification", "#spinner-information");
+    join_click_by_ajax("#chat", "#information", "/chat", "#spinner-information");
 
     join_click_by_ajax("#init", "#information", "/informations", "#spinner-information");
 
