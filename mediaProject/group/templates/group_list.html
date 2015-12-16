@@ -1,11 +1,22 @@
-{% for group in groups %}
-    <h1>{{ group.name }}</h1>
-    <h3>Miembros</h3>
-    {% for member in members %}
-        {% if member.group.id == group.id %}
-            <p>{{ member.person }}</p>
-        {% endif %}
-    {% empty %}
-        <p>No tiene miembros</p>
-    {% endfor %}
-{% endfor %}
+<h1 id="G">Grupos <h5 id="members">(Miembros)</h5></h1>
+<div class="container">
+    <div class="container-fluid">
+        {% for group in groups %}
+
+            <div class="row">
+                <h3 id="group">{{ group.name }}</h3>
+            </div>
+            {% for member in members %}
+                {% if member.group.id == group.id %}
+                    <div class="row">
+                        <ul>
+                            <li id="members">{{ member.person }}</li>
+                        </ul>
+                    </div>
+                {% endif %}
+            {% empty %}
+                <p>No tiene miembros</p>
+            {% endfor %}
+        {% endfor %}
+    </div>
+</div>
